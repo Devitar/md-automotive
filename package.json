@@ -1,8 +1,0 @@
-{
-  "name": "md-automotive",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "git@github.com:Devitar/md-automotive.git",
-  "author": "Devitar <devin.curtis1210@gmail.com>",
-  "license": "MIT"
-}
