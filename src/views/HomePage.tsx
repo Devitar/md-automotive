@@ -1,9 +1,12 @@
-
+import { Button } from 'semantic-ui-react'
 
 const HomePage = () => {
 
     return (
-        <div>Home Page</div>
+        <div>
+            Home Page
+            <Button>Click Me</Button>
+        </div>
     )
 }
 
