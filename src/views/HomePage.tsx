@@ -1,13 +1,14 @@
-import { Button } from 'semantic-ui-react'
+import { Button } from "semantic-ui-react";
+import { Carousel } from "../components";
 
 const HomePage = () => {
+  return (
+    <div>
+      Home Page
+      <Button>Click Me</Button>
+      <Carousel />
+    </div>
+  );
+};
 
-    return (
-        <div>
-            Home Page
-            <Button>Click Me</Button>
-        </div>
-    )
-}
-
-export default HomePage
+export default HomePage;
