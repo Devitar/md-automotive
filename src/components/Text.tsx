@@ -60,9 +60,9 @@ const Text = ({
           ? `sms:${children as string}`
           : (children as string)
       }
+      className={className}
       target={newTab ? "_blank" : undefined}
       backgroundColor={backgroundColor}
-      className={className}
       color={color}
     >
       {mask ? mask : children}
