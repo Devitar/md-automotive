@@ -33,7 +33,7 @@ const Text = ({
   children,
   className,
   color = "black",
-  fontSize = 14,
+  fontSize,
   link = false,
   mask,
   newTab = true,
@@ -76,7 +76,7 @@ const TextRenderer = styled.div<Omit<Props, "children" | "link">>`
     backgroundColor ?? "transparent"};
   color: ${({ color }) => color};
   display: flex;
-  font-size: ${({ fontSize }) => `${fontSize}px`};
+  font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : "1.2rem")};
   font-weight: ${({ bold }) => (bold ? "bold" : 400)};
   text-align: ${({ align }) => align};
 `;
@@ -85,7 +85,7 @@ const LinkRenderer = styled.a<Omit<Props, "children" | "link">>`
     backgroundColor ?? "transparent"};
   color: ${({ color }) => color};
   display: flex;
-  font-size: ${({ fontSize }) => `${fontSize}px`};
+  font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : "1rem")};
   font-weight: ${({ bold }) => (bold ? "bold" : 400)};
   text-align: ${({ align }) => align};
 `;

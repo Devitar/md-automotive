@@ -17,7 +17,6 @@ const Navbar = () => {
   );
 
   return (
-    // <NavbarSticky>
     <Menu fixed="top">
       <Menu.Item header>
         <LogoContainer>LOGO HERE</LogoContainer>
@@ -48,7 +47,6 @@ const Navbar = () => {
         Upcoming Events
       </Menu.Item>
     </Menu>
-    // </NavbarSticky>
   );
 };
 
