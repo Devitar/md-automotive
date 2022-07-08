@@ -1,6 +1,6 @@
-import { Button } from "semantic-ui-react";
-import { Navbar, Carousel, Page, TrustSection } from "components";
-// import styled from 'styled-components'
+import { Carousel, Navbar, Page } from "components";
+import styled from "styled-components";
+import { Container } from "semantic-ui-react";
 
 /** Types */
 
@@ -10,15 +10,17 @@ const HomePage = () => {
   return (
     <Page>
       <Navbar />
-      Home Page
-      <Button>Click Me</Button>
       <Carousel />
-      <TrustSection />
+      <ServicesSection>
+        <Container></Container>
+      </ServicesSection>
     </Page>
   );
 };
 
 /** Styles */
+
+const ServicesSection = styled.div``;
 
 /** Exports */
 
