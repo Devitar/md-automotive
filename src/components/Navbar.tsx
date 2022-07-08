@@ -9,8 +9,7 @@ const Navbar = () => {
     const handleItemClick = useCallback((_: React.MouseEvent<HTMLAnchorElement, MouseEvent>, { name }: MenuItemProps) => setActiveItem(name), [])
 
     return (
-        // <NavbarSticky>
-        <Menu fixed="top" stackable>
+        <Menu fixed="top">
             <Menu.Item header >
                 <LogoContainer>
                     LOGO HERE
@@ -42,7 +41,6 @@ const Navbar = () => {
                 Upcoming Events
             </Menu.Item>
         </Menu>
-        // </NavbarSticky>
     )
 }
 
