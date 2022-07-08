@@ -11,6 +11,7 @@ type Props = {
     /** Bolds the text. Default: false */
     bold?: boolean;
     children?: ReactNode;
+    className?: string;
     /** Colors the text. Default: black */
     color?: string;
     /** Sets the font size in pixels. Default: 14 */
@@ -30,6 +31,7 @@ const Text = ({
     backgroundColor,
     bold = false,
     children,
+    className,
     color = "black",
     fontSize = 14,
     link = false,
@@ -37,7 +39,14 @@ const Text = ({
     newTab = true,
 }: Props) =>
     !link ? (
-        <TextRenderer align={align} bold={bold} color={color} fontSize={fontSize} backgroundColor={backgroundColor}>
+        <TextRenderer
+            align={align}
+            bold={bold}
+            color={color}
+            className={className}
+            fontSize={fontSize}
+            backgroundColor={backgroundColor}
+        >
             {children}
         </TextRenderer>
     ) : (
@@ -51,6 +60,7 @@ const Text = ({
                             ? `sms:${children as string}`
                             : (children as string)
             }
+            className={className}
             target={newTab ? "_blank" : undefined}
             backgroundColor={backgroundColor}
             color={color}
