@@ -1,7 +1,7 @@
 import { Carousel, Navbar, Page, Text } from "components";
 import styled from "styled-components";
 import { Container, Grid, Card } from "semantic-ui-react";
-import waitingRoom from "assets/waiting-room.png";
+import WaitingRoom from "assets/waiting-room.png";
 import { useEffect, useRef, useState } from "react";
 
 /** Types */
@@ -27,7 +27,7 @@ const HomePage = () => {
         <Container>
           <SectionHeaderText bold>Services</SectionHeaderText>
           <Grid reversed="mobile" stackable>
-            <Grid.Column width={8} verticalAlign="middle">
+            <Grid.Column width={8}>
               <div ref={ServicesRef}>
                 <Card color="red" fluid>
                   <Card.Content>
@@ -52,7 +52,7 @@ const HomePage = () => {
             </Grid.Column>
             <Grid.Column width={8}>
               <ImageContainer style={{ height: servicesHeight }}>
-                <img src={waitingRoom} alt="" />
+                <img src={WaitingRoom} alt="" />
               </ImageContainer>
             </Grid.Column>
           </Grid>
@@ -64,7 +64,7 @@ const HomePage = () => {
           <Grid stackable>
             <Grid.Column width={8}>
               <ImageContainer style={{ height: trustHeight }}>
-                <img src={waitingRoom} alt="" />
+                <img src={WaitingRoom} alt="" />
               </ImageContainer>
             </Grid.Column>
             <Grid.Column width={8}>
