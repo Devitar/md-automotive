@@ -1,5 +1,5 @@
-import { Button } from 'semantic-ui-react'
-import { Navbar, Carousel, Page } from 'components'
+import { Button } from "semantic-ui-react";
+import { Navbar, Carousel, Page, TrustSection } from "components";
 // import styled from 'styled-components'
 
 /** Types */
@@ -7,20 +7,19 @@ import { Navbar, Carousel, Page } from 'components'
 /** Component */
 
 const HomePage = () => {
-
-    return (
-        <Page>
-            <Navbar />
-            Home Page
-            <Button>Click Me</Button>
-            <Carousel />
-        </Page>
-    )
-}
+  return (
+    <Page>
+      <Navbar />
+      Home Page
+      <Button>Click Me</Button>
+      <Carousel />
+      <TrustSection />
+    </Page>
+  );
+};
 
 /** Styles */
 
-
 /** Exports */
 
-export default HomePage
+export default HomePage;
