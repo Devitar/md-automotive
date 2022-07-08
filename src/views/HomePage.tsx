@@ -1,7 +1,6 @@
 import { Button } from 'semantic-ui-react'
-import { Navbar } from 'components'
-import styled from 'styled-components'
-import { Carousel } from "../components"
+import { Navbar, Carousel, Page } from 'components'
+// import styled from 'styled-components'
 
 /** Types */
 
@@ -21,9 +20,6 @@ const HomePage = () => {
 
 /** Styles */
 
-const Page = styled.div`
-
-`
 
 /** Exports */
 
