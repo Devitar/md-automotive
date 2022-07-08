@@ -23,7 +23,7 @@ const HomePage = () => {
                 <Container>
                     <SectionHeaderText bold>Services</SectionHeaderText>
                     <Grid reversed='mobile' stackable>
-                        <Grid.Column width={8} verticalAlign='middle'>
+                        <Grid.Column width={8}>
                             <div ref={ServicesRef}>
                                 <Card color='red' fluid>
                                     <Card.Content>
