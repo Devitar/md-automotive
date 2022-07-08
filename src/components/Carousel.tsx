@@ -10,8 +10,11 @@ const CarouselWrapper = () => {
   return (
     <CarouselWrap>
       <Carousel showThumbs={false} showStatus={false}>
-        <CarouselSlide slideImg={frontView} slideText={"Text1"} />
-        <CarouselSlide slideImg={waitingRoomDesk} slideText={"Text2"} />
+        <CarouselSlide slideImg={frontView} slideText={"Come see us!"} />
+        <CarouselSlide
+          slideImg={waitingRoomDesk}
+          slideText={"Schedule an appointment!"}
+        />
         <CarouselSlide slideImg={waitingRoom} slideText={"Text3"} />
       </Carousel>
     </CarouselWrap>
@@ -23,6 +26,8 @@ const CarouselWrap = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
+  background-color: ${(props) => props.theme.colors.backgroundSecondary};
+  border-top: 1px solid black;
 
   .carousel-root {
     max-width: 800px;
