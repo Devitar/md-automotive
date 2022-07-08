@@ -1,13 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.13810e9b.js",
+    "main.css": "/static/css/main.eb10a684.css",
+    "main.js": "/static/js/main.0e3b7acf.js",
+    "static/media/front-view.png": "/static/media/front-view.09d6735d7b05f23587ef.png",
+    "static/media/waiting-room.png": "/static/media/waiting-room.f043c03b1923abbc0ee6.png",
+    "static/media/waiting-room2.png": "/static/media/waiting-room2.4803d040ec73dfbecd1b.png",
+    "static/media/carbon-fiber-woven-texture.jpg": "/static/media/carbon-fiber-woven-texture.e023add0d92c21979528.jpg",
     "index.html": "/index.html",
-    "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.13810e9b.js.map": "/static/js/main.13810e9b.js.map"
+    "main.eb10a684.css.map": "/static/css/main.eb10a684.css.map",
+    "main.0e3b7acf.js.map": "/static/js/main.0e3b7acf.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.13810e9b.js"
+    "static/css/main.eb10a684.css",
+    "static/js/main.0e3b7acf.js"
   ]
 }
