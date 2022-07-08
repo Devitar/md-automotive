@@ -56,11 +56,20 @@ const SlideText = styled.div`
   top: 65%;
   transition: all 0.5s ease;
 
-  &:hover {
+  @media screen and (max-width: 799px) {
     background-position: right bottom;
     border: 2px solid white;
     font-size: 20px;
     padding: 7px 16px;
+  }
+
+  @media screen and (min-width: 800px) {
+    &:hover {
+      background-position: right bottom;
+      border: 2px solid white;
+      font-size: 20px;
+      padding: 7px 16px;
+    }
   }
 `;
 
