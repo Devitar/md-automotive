@@ -12,9 +12,13 @@ const HomePage = () => {
   const ServicesRef = useRef<HTMLDivElement | null>(null);
   const [servicesHeight, setServicesHeight] = useState<number>(0);
 
+  const TrustRef = useRef<HTMLDivElement | null>(null);
+  const [trustHeight, setTrustHeight] = useState<number>(0);
+
   useEffect(() => {
     setServicesHeight(ServicesRef?.current?.clientHeight ?? 0);
-  }, [ServicesRef?.current?.clientHeight]);
+    setTrustHeight(TrustRef?.current?.clientHeight ?? 0);
+  }, [ServicesRef?.current?.clientHeight, TrustRef?.current?.clientHeight]);
 
   return (
     <Page>
@@ -54,6 +58,42 @@ const HomePage = () => {
           </Grid>
         </Container>
       </ServicesSection>
+      <TrustSection>
+        <Container>
+          <SectionHeaderText bold>Trust</SectionHeaderText>
+          <Grid stackable>
+            <Grid.Column width={8}>
+              <ImageContainer style={{ height: trustHeight }}>
+                <img src={waitingRoom} alt="" />
+              </ImageContainer>
+            </Grid.Column>
+            <Grid.Column width={8}>
+              <div ref={TrustRef}>
+                <Card color="red" fluid>
+                  <Card.Content>
+                    <Text>
+                      We Listen To Your Needs!
+                      <br />
+                      <br />
+                      This is the most overlooked area with many auto repair
+                      companies in the automotive service industry. We explain
+                      what we do BEFORE the work is done. Then we will perform
+                      the proper type of diagnosis of your problem and call
+                      before the work is done. A complete explanation of the
+                      problem areas are detailed to you. You will understand
+                      what has to be done, why and what the cost will be. You
+                      are a part of the repair process and the decisions. With a
+                      20+ years experienced mechanic you'll know you're
+                      receiving unmatched service compared to others in the
+                      area.
+                    </Text>
+                  </Card.Content>
+                </Card>
+              </div>
+            </Grid.Column>
+          </Grid>
+        </Container>
+      </TrustSection>
     </Page>
   );
 };
@@ -91,9 +131,11 @@ const ServicesSection = styled.div`
 `;
 
 const TrustSection = styled.div`
-  padding-top: 12px;
-  padding-bottom: 12px;
   background-color: ${(props) => props.theme.colors.backgroundSecondary};
+  border-radius: ${(props) => props.theme.borderRadius};
+  margin: 16px 16px;
+  padding-bottom: 12px;
+  padding-top: 12px;
 `;
 
 /** Exports */
