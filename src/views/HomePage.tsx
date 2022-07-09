@@ -1,4 +1,4 @@
-import { Carousel, Navbar, Page, Text } from "components";
+import { Navbar, Page, Text } from "components";
 import styled from "styled-components";
 import { Container, Grid, Card } from "semantic-ui-react";
 import WaitingRoom from "assets/waiting-room.png";
@@ -15,10 +15,20 @@ const HomePage = () => {
   const TrustRef = useRef<HTMLDivElement | null>(null);
   const [trustHeight, setTrustHeight] = useState<number>(0);
 
+  const AboutUsRef = useRef<HTMLDivElement | null>(null);
+  const [aboutUsHeight, setAboutUsHeight] = useState<number>(0);
+
   useEffect(() => {
     setServicesHeight(ServicesRef?.current?.clientHeight ?? 0);
+  }, [ServicesRef?.current?.clientHeight]);
+
+  useEffect(() => {
     setTrustHeight(TrustRef?.current?.clientHeight ?? 0);
-  }, [ServicesRef?.current?.clientHeight, TrustRef?.current?.clientHeight]);
+  }, [TrustRef?.current?.clientHeight]);
+
+  useEffect(() => {
+    setAboutUsHeight(AboutUsRef?.current?.clientHeight ?? 0);
+  }, [AboutUsRef?.current?.clientHeight]);
 
   return (
     <Page>
@@ -94,6 +104,38 @@ const HomePage = () => {
           </Grid>
         </Container>
       </TrustSection>
+      <AboutUsSection>
+        <Container>
+          <SectionHeaderText bold>About Us</SectionHeaderText>
+          <Grid stackable>
+            <Grid.Column width={8}>
+              <ImageContainer style={{ height: aboutUsHeight }}>
+                <img src={WaitingRoom} alt="" />
+              </ImageContainer>
+            </Grid.Column>
+            <Grid.Column width={8}>
+              <div ref={AboutUsRef}>
+                <Card color="red" fluid>
+                  <Card.Content>
+                    <Text>
+                      We are your expert specialty shop without inflated prices!
+                      <br />
+                      <br />
+                      We have the equipment to do the job RIGHT which will save
+                      you time and money. We know what it takes to service all
+                      your automotive needs.
+                      <br />
+                      <br />
+                      We also can save you money on maintenance. We provide
+                      expert, friendly service at affordable pricing.
+                    </Text>
+                  </Card.Content>
+                </Card>
+              </div>
+            </Grid.Column>
+          </Grid>
+        </Container>
+      </AboutUsSection>
     </Page>
   );
 };
@@ -132,6 +174,14 @@ const ServicesSection = styled.div`
 
 const TrustSection = styled.div`
   background-color: ${(props) => props.theme.colors.backgroundSecondary};
+  border-radius: ${(props) => props.theme.borderRadius};
+  margin: 16px 16px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+`;
+
+const AboutUsSection = styled.div`
+  background-color: ${(props) => props.theme.colors.background};
   border-radius: ${(props) => props.theme.borderRadius};
   margin: 16px 16px;
   padding-bottom: 12px;
