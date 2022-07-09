@@ -1,8 +1,8 @@
-import { Carousel, Navbar, Page, Text } from "components";
-import styled from "styled-components";
-import { Container, Grid, Card } from "semantic-ui-react";
 import WaitingRoom from "assets/waiting-room.png";
+import { Navbar, Page, Text } from "components";
 import { useEffect, useRef, useState } from "react";
+import { Card, Container, Grid } from "semantic-ui-react";
+import styled from "styled-components";
 
 /** Types */
 
@@ -102,17 +102,16 @@ const HomePage = () => {
 
 const SectionHeaderText = styled(Text)`
   font-size: 2.5rem !important;
-  height: calc(auto + 44px);
   justify-content: center;
-  margin-top: 8px;
   margin-bottom: 22px;
+  margin-top: 8px;
   width: 100%;
 `;
 
 const ImageContainer = styled.div`
+  border-radius: ${(props) => props.theme.borderRadius};
   display: flex;
   justify-content: center;
-  border-radius: ${(props) => props.theme.borderRadius};
   overflow: hidden;
 
   img {
