@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 /** Component */
 
 const NavbarMobile = () => {
@@ -5,6 +7,8 @@ const NavbarMobile = () => {
 };
 
 /** Styles */
+
+const Menu = styled.div``;
 
 /** Exports */
 
