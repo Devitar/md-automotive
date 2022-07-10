@@ -148,7 +148,7 @@ const HomePage = () => {
       </Section>
       <Section background={"secondary"}>
         <Container>
-          <Header showBanner>Contact Us</Header>
+          <Header>Contact Us</Header>
           <div
             style={{
               display: "flex",

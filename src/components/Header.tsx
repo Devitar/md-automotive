@@ -1,6 +1,6 @@
 import BannerImg from "assets/banner-red.png";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { Text } from "components";
 
 /** Types */
 
@@ -12,39 +12,60 @@ type Props = {
 /** Component */
 
 const Header = ({ children, showBanner }: React.PropsWithChildren<Props>) => {
+  const [textWidth, setTextWidth] = useState<number>(0);
+  const textRef = useRef<HTMLHeadingElement | null>(null);
+
+  useEffect(() => {
+    setTextWidth(textRef?.current?.clientWidth ?? 0);
+  }, [textRef?.current?.clientWidth]);
+
   return showBanner ? (
     <Wrapper>
-      <Banner src={BannerImg} />
-      <SectionHeaderText bold>{children}</SectionHeaderText>
+      <Banner src={BannerImg} style={{ width: textWidth + 100 }} />
+      <SectionHeaderText ref={textRef}>{children}</SectionHeaderText>
     </Wrapper>
   ) : (
-    <SectionHeaderText bold>{children}</SectionHeaderText>
+    <Wrapper>
+      <SectionHeaderText
+        style={{ textDecoration: "underline", textDecorationColor: "white" }}
+      >
+        {children}
+      </SectionHeaderText>
+    </Wrapper>
   );
 };
 
 /** Styles */
 
-const SectionHeaderText = styled(Text)`
-  display: flex;
+const SectionHeaderText = styled.h2`
+  display: inline-block;
   font-family: "Roboto Slab", serif;
   font-size: 2.5rem !important;
-  justify-content: center;
-  margin-bottom: 22px;
-  margin-top: 8px;
-  width: 100%;
-  /* z-index: 2; */
+  margin-top: 0px;
+  position: relative;
+  z-index: 2;
+  color: white;
+
+  @supports (-webkit-text-stroke: 1.5px black) {
+    -webkit-text-stroke: 1.5px black;
+    -webkit-text-fill-color: white;
+  }
 `;
 
 const Wrapper = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 8px 0px;
   position: relative;
-  /* display: flex; */
-  /* justify-content: center; */
 `;
 
 const Banner = styled.img`
-  height: 100%;
+  height: 115%;
+  left: 50%;
   position: absolute;
   top: 0;
+  transform: translate(-50%, -15%);
   z-index: 1;
 `;
 

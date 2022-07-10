@@ -21,12 +21,18 @@ const Section = ({
 
 /** Styles */
 const SectionWrapper = styled.div<Props>`
-  background-color: ${(props) =>
+  /* background-color: ${(props) =>
     props.background === "primary"
       ? props.theme.colors.background
       : props.background === "secondary"
       ? props.theme.colors.backgroundSecondary
-      : props.theme.colors.background};
+      : props.theme.colors.background}; */
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
   border-radius: ${(props) => props.theme.borderRadius};
   margin: 16px 16px;
   padding-bottom: 12px;

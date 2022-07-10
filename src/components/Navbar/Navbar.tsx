@@ -43,10 +43,12 @@ const Navbar = () => {
 const Wrapper = styled.div`
   a {
     cursor: pointer;
+    color: white;
+    font-size: 1.35rem;
   }
 
   .menu {
-    box-shadow: 0px 7px 23px -4px rgba(0, 0, 0, 0.75);
+    background-color: black;
   }
 
   @media only screen and (max-width: 800px) {
@@ -56,6 +58,7 @@ const Wrapper = styled.div`
 
 const LogoContainer = styled.div`
   flex: 1;
+  color: white;
 `;
 
 /** Exports */
