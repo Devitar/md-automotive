@@ -1,5 +1,5 @@
 import WaitingRoom from "assets/waiting-room.png";
-import { Navbar, Page, Text } from "components";
+import { Page, Text } from "components";
 import { useEffect, useRef, useState } from "react";
 import { Card, Container, Grid } from "semantic-ui-react";
 import styled from "styled-components";
@@ -22,8 +22,7 @@ const HomePage = () => {
 
   return (
     <Page>
-      <Navbar />
-      <ServicesSection>
+      <ServicesSection id="Services">
         <Container>
           <SectionHeaderText bold>Services</SectionHeaderText>
           <Grid reversed="mobile" stackable>
@@ -58,7 +57,7 @@ const HomePage = () => {
           </Grid>
         </Container>
       </ServicesSection>
-      <TrustSection>
+      <TrustSection id="Trust">
         <Container>
           <SectionHeaderText bold>Trust</SectionHeaderText>
           <Grid stackable>
@@ -101,6 +100,7 @@ const HomePage = () => {
 /** Styles */
 
 const SectionHeaderText = styled(Text)`
+  font-family: "Roboto Slab", serif;
   font-size: 2.5rem !important;
   justify-content: center;
   margin-bottom: 22px;
