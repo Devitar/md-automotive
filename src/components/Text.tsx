@@ -16,6 +16,8 @@ type Props = {
   fontSize?: number;
   /** Sets the font style. */
   italic?: boolean;
+  /** Text decoration */
+  textDecoration?: string;
   /** Flags the text as a link (of a certain type if chosen, will use a generic if not),
    * and will be rendered as an `<a>` tag instead. Default: false */
   link?: boolean | "email" | "telephone" | "textMessage";
@@ -35,6 +37,7 @@ const Text = ({
   color,
   fontSize,
   italic,
+  textDecoration,
   link = false,
   mask,
   newTab = true,
@@ -47,6 +50,7 @@ const Text = ({
       className={className}
       fontSize={fontSize}
       italic={italic}
+      textDecoration={textDecoration}
       backgroundColor={backgroundColor}
     >
       {children}
@@ -68,6 +72,7 @@ const Text = ({
       fontSize={fontSize}
       color={color}
       italic={italic}
+      textDecoration={textDecoration}
     >
       {mask ? mask : children}
     </LinkRenderer>
@@ -84,6 +89,7 @@ const TextRenderer = styled.div<Omit<Props, "children" | "link">>`
   font-style: ${({ italic }) => (italic ? "italic" : undefined)};
   font-weight: ${({ bold }) => (bold ? "bold" : 400)};
   text-align: ${({ align }) => align};
+  text-decoration: ${({ textDecoration }) => textDecoration};
 `;
 const LinkRenderer = styled.a<Omit<Props, "children" | "link">>`
   background-color: ${({ backgroundColor }) =>
@@ -94,6 +100,7 @@ const LinkRenderer = styled.a<Omit<Props, "children" | "link">>`
   font-style: ${({ italic }) => (italic ? "italic" : undefined)};
   font-weight: ${({ bold }) => (bold ? "bold" : 400)};
   text-align: ${({ align }) => align};
+  text-decoration: ${({ textDecoration }) => textDecoration};
 `;
 
 /** Exports */

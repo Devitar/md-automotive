@@ -163,11 +163,15 @@ const HomePage = () => {
                   }}
                 >
                   <div style={{ paddingBottom: "8px", paddingTop: "8px" }}>
-                    <Text bold>Location: </Text>
+                    <Text bold color="white">
+                      Location:{" "}
+                    </Text>
                     <Text
                       link
                       mask={"1274 W 300 S St, Lindon, UT 84042"}
                       fontSize={16}
+                      color="white"
+                      textDecoration="underline"
                     >
                       {
                         "https://www.google.com/maps?ll=40.33162,-111.745175&z=17&t=m&hl=en&gl=US&mapclient=embed&cid=1072264808114827680"
@@ -203,16 +207,22 @@ const HomePage = () => {
                   <Card color="red" fluid>
                     <Card.Content>
                       <div style={{ paddingBottom: "8px", paddingTop: "8px" }}>
-                        <Text bold>Phone: </Text>
-                        <Text link="telephone" fontSize={16}>
+                        <Text bold fontSize={20}>
+                          Phone:{" "}
+                        </Text>
+                        <Text
+                          link="telephone"
+                          fontSize={20}
+                          textDecoration="underline"
+                        >
                           +1 (385) 336 - 3652
                         </Text>
                       </div>
                       <table className="ui celled table unstackable">
                         <thead>
                           <tr>
-                            <th>Days</th>
-                            <th>Operational Hours</th>
+                            <th style={{ fontSize: "1.5rem" }}>Days</th>
+                            <th style={{ fontSize: "1.5rem" }}>Hours</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -238,11 +248,20 @@ const HomePage = () => {
                           </tr>
                           <tr>
                             <td data-label="Days">Saturday</td>
-                            <td data-label="Operational Hours">8AM - 6PM</td>
+                            <td data-label="Operational Hours">
+                              8AM - <span style={{ color: "red" }}>4PM</span>
+                            </td>
                           </tr>
                           <tr>
-                            <td data-label="Days">Sunday</td>
-                            <td data-label="Operational Hours">Closed</td>
+                            <td data-label="Days" style={{ color: "red" }}>
+                              Sunday
+                            </td>
+                            <td
+                              data-label="Operational Hours"
+                              style={{ color: "red" }}
+                            >
+                              Closed
+                            </td>
                           </tr>
                         </tbody>
                       </table>
