@@ -1,11 +1,18 @@
 import Background from "assets/carbon-fiber-woven-texture.jpg";
 import React from "react";
 import styled from "styled-components";
+import { Navbar, NavbarMobile } from "components";
 
 /** Component */
 
 const Page = ({ children }: React.PropsWithChildren) => {
-  return <Wrapper>{children}</Wrapper>;
+  return (
+    <Wrapper>
+      <Navbar />
+      <NavbarMobile />
+      {children}
+    </Wrapper>
+  );
 };
 
 /** Styles */

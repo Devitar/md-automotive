@@ -1,8 +1,8 @@
-import { Navbar, Page, Text, Divider, Section } from "components";
-import styled from "styled-components";
-import { Container, Grid, Card, CardProps } from "semantic-ui-react";
 import WaitingRoom from "assets/waiting-room.png";
+import { Divider, Page, Section, Text } from "components";
 import { useEffect, useRef, useState } from "react";
+import { Card, Container, Grid } from "semantic-ui-react";
+import styled from "styled-components";
 
 /** Types */
 
@@ -39,8 +39,7 @@ const HomePage = () => {
 
   return (
     <Page>
-      <Navbar />
-      <Section>
+      <Section id="Services">
         <Container>
           <SectionHeaderText bold>Services</SectionHeaderText>
           <Grid reversed="mobile" stackable>
@@ -76,7 +75,7 @@ const HomePage = () => {
           </Grid>
         </Container>
       </Section>
-      <Section background={"secondary"}>
+      <Section id="Trust" background="secondary">
         <Container>
           <SectionHeaderText bold>Trust</SectionHeaderText>
           <Grid stackable>
@@ -226,18 +225,18 @@ const HomePage = () => {
 
 const SectionHeaderText = styled(Text)`
   display: flex;
+  font-family: "Roboto Slab", serif;
   font-size: 2.5rem !important;
-  height: calc(auto + 44px);
   justify-content: center;
-  margin-top: 8px;
   margin-bottom: 22px;
+  margin-top: 8px;
   width: 100%;
 `;
 
 const ImageContainer = styled.div`
+  border-radius: ${(props) => props.theme.borderRadius};
   display: flex;
   justify-content: center;
-  border-radius: ${(props) => props.theme.borderRadius};
   overflow: hidden;
 
   img {
