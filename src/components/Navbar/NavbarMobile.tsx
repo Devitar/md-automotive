@@ -41,7 +41,7 @@ const NavbarMobile = () => {
 
           <Menu.Item name="aboutus">
             <ScrollLink
-              to={"Trust"}
+              to={"AboutUs"}
               spy
               smooth
               duration={500}

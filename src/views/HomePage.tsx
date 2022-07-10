@@ -70,7 +70,7 @@ const HomePage = () => {
           </Grid>
         </Container>
       </Section>
-      <Section id="Trust" background="secondary">
+      <Section background="secondary">
         <Container>
           <Header showBanner>Trust</Header>
           <Grid stackable>
@@ -110,7 +110,7 @@ const HomePage = () => {
           </Grid>
         </Container>
       </Section>
-      <Section>
+      <Section id="AboutUs">
         <Container>
           <Header showBanner>About Us</Header>
           <Grid reversed="mobile" stackable>
@@ -154,12 +154,13 @@ const HomePage = () => {
               width: "100%",
             }}
           >
-            <Grid reversed="mobile" stackable>
+            <Grid reversed="mobile" stackable container>
               <Grid.Column width={8}>
                 <div
                   style={{
                     display: "flex",
                     flexDirection: "column",
+                    width: "100%",
                   }}
                 >
                   <div style={{ paddingBottom: "8px", paddingTop: "8px" }}>
@@ -181,8 +182,8 @@ const HomePage = () => {
                   <iframe
                     title="mapskis"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2150.6175488091562!2d-111.74628464204534!3d40.33275062721492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xee1732970d631a0!2sMD%20automotive%20repair!5e0!3m2!1sen!2sus!4v1657410800816!5m2!1sen!2sus"
-                    width={aboutUsWidth}
-                    height={aboutUsWidth}
+                    width={aboutUsWidth - 25}
+                    height={aboutUsWidth - 25}
                     style={{
                       border: 0,
                       zIndex: 1,
@@ -197,14 +198,8 @@ const HomePage = () => {
                 <Divider vertical />
               </Grid.Column> */}
               <Grid.Column width={8}>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    height: "100%",
-                  }}
-                >
-                  <Card color="red" fluid>
+                <CardWrapper>
+                  <Card color="red" fluid style={{ marginTop: 58 }}>
                     <Card.Content>
                       <div style={{ paddingBottom: "8px", paddingTop: "8px" }}>
                         <Text bold fontSize={20}>
@@ -267,7 +262,7 @@ const HomePage = () => {
                       </table>
                     </Card.Content>
                   </Card>
-                </div>
+                </CardWrapper>
               </Grid.Column>
             </Grid>
           </div>
@@ -289,6 +284,18 @@ const ImageContainer = styled.div`
     object-fit: cover;
     height: 100% !important;
     width: 100% !important;
+  }
+`;
+
+const CardWrapper = styled.div`
+  display: "flex";
+  flex-direction: column;
+  height: 100%;
+
+  @media only screen and (max-width: 799px) {
+    .card {
+      margin-top: 0px !important;
+    }
   }
 `;
 

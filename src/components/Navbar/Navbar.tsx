@@ -19,7 +19,7 @@ const Navbar = () => {
         </Menu.Item>
 
         <Menu.Item name="aboutus">
-          <ScrollLink to={"Trust"} spy smooth duration={500} offset={-50}>
+          <ScrollLink to={"AboutUs"} spy smooth duration={500} offset={-50}>
             About Us
           </ScrollLink>
         </Menu.Item>
