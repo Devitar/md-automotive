@@ -1,17 +1,20 @@
 {
   "files": {
     "main.css": "/static/css/main.eb10a684.css",
-    "main.js": "/static/js/main.0e3b7acf.js",
+    "main.js": "/static/js/main.08d2f22d.js",
     "static/media/front-view.png": "/static/media/front-view.09d6735d7b05f23587ef.png",
     "static/media/waiting-room.png": "/static/media/waiting-room.f043c03b1923abbc0ee6.png",
     "static/media/waiting-room2.png": "/static/media/waiting-room2.4803d040ec73dfbecd1b.png",
     "static/media/carbon-fiber-woven-texture.jpg": "/static/media/carbon-fiber-woven-texture.e023add0d92c21979528.jpg",
+    "static/media/banner-red.png": "/static/media/banner-red.5e57851b8a4a761caf71.png",
+    "static/media/delete_white.png": "/static/media/delete_white.cfb3dbae43bf4e620239.png",
+    "static/media/menu_icon_white.png": "/static/media/menu_icon_white.0119ee6d56b4e253820f.png",
     "index.html": "/index.html",
     "main.eb10a684.css.map": "/static/css/main.eb10a684.css.map",
-    "main.0e3b7acf.js.map": "/static/js/main.0e3b7acf.js.map"
+    "main.08d2f22d.js.map": "/static/js/main.08d2f22d.js.map"
   },
   "entrypoints": [
     "static/css/main.eb10a684.css",
-    "static/js/main.0e3b7acf.js"
+    "static/js/main.08d2f22d.js"
   ]
 }
