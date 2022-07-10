@@ -17,9 +17,7 @@ const HomePage = () => {
 
   const AboutUsRef = useRef<HTMLDivElement | null>(null);
   const [aboutUsHeight, setAboutUsHeight] = useState<number>(0);
-
-  const CardRef = useRef<HTMLDivElement | null>(null);
-  const [cardWidth, setCardWidth] = useState<number>(0);
+  const [aboutUsWidth, setAboutUsWidth] = useState<number>(0);
 
   useEffect(() => {
     setServicesHeight(ServicesRef?.current?.clientHeight ?? 0);
@@ -31,11 +29,8 @@ const HomePage = () => {
 
   useEffect(() => {
     setAboutUsHeight(AboutUsRef?.current?.clientHeight ?? 0);
-  }, [AboutUsRef?.current?.clientHeight]);
-
-  useEffect(() => {
-    setCardWidth(CardRef?.current?.clientWidth ?? 0);
-  }, [CardRef?.current?.clientWidth]);
+    setAboutUsWidth(AboutUsRef?.current?.clientWidth ?? 0);
+  }, [AboutUsRef?.current?.clientHeight, AboutUsRef?.current?.clientWidth]);
 
   return (
     <Page>
@@ -88,10 +83,11 @@ const HomePage = () => {
               <div ref={TrustRef}>
                 <Card color="red" fluid>
                   <Card.Content>
-                    <Text>
+                    <Text bold fontSize={20}>
                       We Listen To Your Needs!
-                      <br />
-                      <br />
+                    </Text>
+                    <Divider />
+                    <Text>
                       This is the most overlooked area with many auto repair
                       companies in the automotive service industry. We explain
                       what we do&nbsp;
@@ -122,10 +118,11 @@ const HomePage = () => {
               <div ref={AboutUsRef}>
                 <Card color="red" fluid>
                   <Card.Content>
-                    <Text>
+                    <Text bold fontSize={20}>
                       We are your expert specialty shop without inflated prices!
-                      <br />
-                      <br />
+                    </Text>
+                    <Divider />
+                    <Text>
                       We have the equipment to do the job RIGHT which will save
                       you time and money. We know what it takes to service all
                       your automotive needs.
@@ -154,66 +151,125 @@ const HomePage = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              width: "100%",
             }}
           >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                width: "100%",
-              }}
-            >
-              <div style={{ paddingBottom: "8px", paddingTop: "8px" }}>
-                <Text bold>Location: </Text>
-                <Text
-                  link
-                  mask={"1274 W 300 S St, Lindon, UT 84042"}
-                  fontSize={16}
+            <Grid reversed="mobile" stackable>
+              <Grid.Column width={8}>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
                 >
-                  {
-                    "https://www.google.com/maps?ll=40.33162,-111.745175&z=17&t=m&hl=en&gl=US&mapclient=embed&cid=1072264808114827680"
-                  }
-                </Text>
-              </div>
-              <iframe
-                title="mapskis"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2150.6175488091562!2d-111.74628464204534!3d40.33275062721492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xee1732970d631a0!2sMD%20automotive%20repair!5e0!3m2!1sen!2sus!4v1657410800816!5m2!1sen!2sus"
-                width={cardWidth > 400 ? 400 : cardWidth}
-                height={cardWidth > 400 ? 400 : cardWidth}
-                style={{
-                  border: 0,
-                  zIndex: 1,
-                }}
-                allowFullScreen={false}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-            </div>
-            <div ref={CardRef}>
-              <Card color="red" fluid>
-                <Card.Content>
-                  <table className="ui celled table unstackable">
-                    <thead>
-                      <tr>
-                        <th>Location</th>
-                        <th>Contact Number</th>
-                        <th>Hours</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td data-label="Location">
-                          852 north 1430 west Orem 84057
-                        </td>
-                        <td data-label="Contact Number">(801) 687-0721</td>
-                        <td data-label="Hours">Monday - Saturday 8am to 6pm</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </Card.Content>
-              </Card>
-            </div>
+                  <div style={{ paddingBottom: "8px", paddingTop: "8px" }}>
+                    <Text bold color="white">
+                      Location:{" "}
+                    </Text>
+                    <Text
+                      link
+                      mask={"1274 W 300 S St, Lindon, UT 84042"}
+                      fontSize={16}
+                      color="white"
+                      textDecoration="underline"
+                    >
+                      {
+                        "https://www.google.com/maps?ll=40.33162,-111.745175&z=17&t=m&hl=en&gl=US&mapclient=embed&cid=1072264808114827680"
+                      }
+                    </Text>
+                  </div>
+                  <iframe
+                    title="mapskis"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2150.6175488091562!2d-111.74628464204534!3d40.33275062721492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xee1732970d631a0!2sMD%20automotive%20repair!5e0!3m2!1sen!2sus!4v1657410800816!5m2!1sen!2sus"
+                    width={aboutUsWidth}
+                    height={aboutUsWidth}
+                    style={{
+                      border: 0,
+                      zIndex: 1,
+                    }}
+                    allowFullScreen={false}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
+              </Grid.Column>
+              {/* <Grid.Column width={2}>
+                <Divider vertical />
+              </Grid.Column> */}
+              <Grid.Column width={8}>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    height: "100%",
+                  }}
+                >
+                  <Card color="red" fluid>
+                    <Card.Content>
+                      <div style={{ paddingBottom: "8px", paddingTop: "8px" }}>
+                        <Text bold fontSize={20}>
+                          Phone:{" "}
+                        </Text>
+                        <Text
+                          link="telephone"
+                          fontSize={20}
+                          textDecoration="underline"
+                        >
+                          +1 (385) 336 - 3652
+                        </Text>
+                      </div>
+                      <table className="ui celled table unstackable">
+                        <thead>
+                          <tr>
+                            <th style={{ fontSize: "1.5rem" }}>Days</th>
+                            <th style={{ fontSize: "1.5rem" }}>Hours</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td data-label="Days">Monday</td>
+                            <td data-label="Operational Hours">8AM - 6PM</td>
+                          </tr>
+                          <tr>
+                            <td data-label="Days">Tuesday</td>
+                            <td data-label="Operational Hours">8AM - 6PM</td>
+                          </tr>
+                          <tr>
+                            <td data-label="Days">Wednesday</td>
+                            <td data-label="Operational Hours">8AM - 6PM</td>
+                          </tr>
+                          <tr>
+                            <td data-label="Days">Thursday</td>
+                            <td data-label="Operational Hours">8AM - 6PM</td>
+                          </tr>
+                          <tr>
+                            <td data-label="Days">Friday</td>
+                            <td data-label="Operational Hours">8AM - 6PM</td>
+                          </tr>
+                          <tr>
+                            <td data-label="Days">Saturday</td>
+                            <td data-label="Operational Hours">
+                              8AM - <span style={{ color: "red" }}>4PM</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td data-label="Days" style={{ color: "red" }}>
+                              Sunday
+                            </td>
+                            <td
+                              data-label="Operational Hours"
+                              style={{ color: "red" }}
+                            >
+                              Closed
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </Card.Content>
+                  </Card>
+                </div>
+              </Grid.Column>
+            </Grid>
           </div>
         </Container>
       </Section>
