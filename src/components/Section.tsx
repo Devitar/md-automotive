@@ -3,15 +3,17 @@ import styled from "styled-components";
 type Props = {
   background?: "primary" | "secondary";
   ref?: React.MutableRefObject<HTMLDivElement | null>;
+  id?: string;
 };
 
 const Section = ({
   children,
   background,
   ref,
+  id,
 }: React.PropsWithChildren<Props>) => {
   return (
-    <SectionWrapper ref={ref} background={background}>
+    <SectionWrapper id={id} ref={ref} background={background}>
       {children}
     </SectionWrapper>
   );
