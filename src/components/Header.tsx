@@ -27,7 +27,11 @@ const Header = ({ children, showBanner }: React.PropsWithChildren<Props>) => {
   ) : (
     <Wrapper>
       <SectionHeaderText
-        style={{ textDecoration: "underline", textDecorationColor: "white" }}
+        style={{
+          textDecoration: "underline",
+          textDecorationColor: "white",
+          fontSize: "2rem",
+        }}
       >
         {children}
       </SectionHeaderText>
@@ -40,7 +44,7 @@ const Header = ({ children, showBanner }: React.PropsWithChildren<Props>) => {
 const SectionHeaderText = styled.h2`
   display: inline-block;
   font-family: "Roboto Slab", serif;
-  font-size: 2.5rem !important;
+  font-size: 2.5rem;
   margin-top: 0px;
   position: relative;
   z-index: 2;
