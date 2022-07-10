@@ -21,7 +21,7 @@ const Wrapper = styled.div`
   background-image: url(${Background});
   background-repeat: repeat;
   background-size: 300px;
-  margin-top: 32px;
+  margin-top: 42px;
   min-height: 100vh;
   padding: 4px 0px;
   width: 100%;
