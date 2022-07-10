@@ -1,5 +1,5 @@
-import CloseIcon from "assets/delete.png";
-import HamburgerIcon from "assets/menu_icon.png";
+import CloseIcon from "assets/delete_white.png";
+import HamburgerIcon from "assets/menu_icon_white.png";
 import { Text } from "components";
 import { useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
@@ -13,8 +13,8 @@ const NavbarMobile = () => {
 
   return (
     <Wrapper>
-      <TopBar>
-        <>LOGO HERE</>
+      <TopBar className="menu">
+        <LogoContainer>LOGO HERE</LogoContainer>
         <MenuBtn src={HamburgerIcon} onClick={() => setIsOpen(true)} />
       </TopBar>
       <MenuWrapper isOpen={isOpen}>
@@ -23,7 +23,7 @@ const NavbarMobile = () => {
           onClick={() => setIsOpen(false)}
         >
           <CloseBtn src={CloseIcon} />
-          <Text>Close</Text>
+          <Text color="white">Close</Text>
         </div>
         <Menu stackable>
           <Menu.Item position="right" name="services">
@@ -77,6 +77,16 @@ const Wrapper = styled.div`
   top: 0;
   z-index: 10;
 
+  a {
+    cursor: pointer;
+    color: white;
+    font-size: 1.35rem;
+  }
+
+  .menu {
+    background-color: black;
+  }
+
   @media only screen and (min-width: 800px) {
     display: none;
   }
@@ -107,13 +117,20 @@ const CloseBtn = styled.img`
 `;
 
 const MenuWrapper = styled.div<{ isOpen: boolean }>`
-  background-color: ${(props) => props.theme.colors.background};
+  background-color: black;
+  border-radius: ${(props) => props.theme.borderRadius};
   box-shadow: 0px 7px 23px -4px rgba(0, 0, 0, 0.75);
   left: ${({ isOpen }) => (isOpen ? "0%" : "100%;")};
+  overflow: hidden;
   position: fixed;
   top: 0;
   transition: left 0.35s ease-out;
   width: 100vw;
+`;
+
+const LogoContainer = styled.div`
+  flex: 1;
+  color: white;
 `;
 
 /** Exports */

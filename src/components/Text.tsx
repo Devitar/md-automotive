@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import styled from "styled-components";
 
 /** Types */
@@ -10,7 +9,6 @@ type Props = {
   backgroundColor?: string;
   /** Bolds the text. Default: false */
   bold?: boolean;
-  children?: ReactNode;
   className?: string;
   /** Colors the text. Default: black */
   color?: string;
@@ -40,7 +38,7 @@ const Text = ({
   link = false,
   mask,
   newTab = true,
-}: Props) =>
+}: React.PropsWithChildren<Props>) =>
   !link ? (
     <TextRenderer
       align={align}

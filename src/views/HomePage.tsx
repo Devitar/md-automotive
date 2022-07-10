@@ -1,5 +1,5 @@
 import WaitingRoom from "assets/waiting-room.png";
-import { Divider, Page, Section, Text } from "components";
+import { Divider, Page, Section, Text, Header } from "components";
 import { useEffect, useRef, useState } from "react";
 import { Card, Container, Grid } from "semantic-ui-react";
 import styled from "styled-components";
@@ -36,7 +36,7 @@ const HomePage = () => {
     <Page>
       <Section id="Services">
         <Container>
-          <SectionHeaderText bold>Services</SectionHeaderText>
+          <Header showBanner>Services</Header>
           <Grid reversed="mobile" stackable>
             <Grid.Column width={8}>
               <div ref={ServicesRef}>
@@ -72,7 +72,7 @@ const HomePage = () => {
       </Section>
       <Section id="Trust" background="secondary">
         <Container>
-          <SectionHeaderText bold>Trust</SectionHeaderText>
+          <Header showBanner>Trust</Header>
           <Grid stackable>
             <Grid.Column width={8}>
               <ImageContainer style={{ height: trustHeight }}>
@@ -112,7 +112,7 @@ const HomePage = () => {
       </Section>
       <Section>
         <Container>
-          <SectionHeaderText bold>About Us</SectionHeaderText>
+          <Header showBanner>About Us</Header>
           <Grid reversed="mobile" stackable>
             <Grid.Column width={8}>
               <div ref={AboutUsRef}>
@@ -145,7 +145,7 @@ const HomePage = () => {
       </Section>
       <Section background={"secondary"}>
         <Container>
-          <SectionHeaderText bold>Contact Us</SectionHeaderText>
+          <Header>Contact Us</Header>
           <div
             style={{
               display: "flex",
@@ -259,16 +259,6 @@ const HomePage = () => {
 };
 
 /** Styles */
-
-const SectionHeaderText = styled(Text)`
-  display: flex;
-  font-family: "Roboto Slab", serif;
-  font-size: 2.5rem !important;
-  justify-content: center;
-  margin-bottom: 22px;
-  margin-top: 8px;
-  width: 100%;
-`;
 
 const ImageContainer = styled.div`
   border-radius: ${(props) => props.theme.borderRadius};
