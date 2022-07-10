@@ -16,6 +16,8 @@ type Props = {
   color?: string;
   /** Sets the font size in pixels. Default: 14 */
   fontSize?: number;
+  /** Sets the font style. */
+  italic?: boolean;
   /** Flags the text as a link (of a certain type if chosen, will use a generic if not),
    * and will be rendered as an `<a>` tag instead. Default: false */
   link?: boolean | "email" | "telephone" | "textMessage";
@@ -32,8 +34,9 @@ const Text = ({
   bold = false,
   children,
   className,
-  color = "black",
+  color,
   fontSize,
+  italic,
   link = false,
   mask,
   newTab = true,
@@ -45,6 +48,7 @@ const Text = ({
       color={color}
       className={className}
       fontSize={fontSize}
+      italic={italic}
       backgroundColor={backgroundColor}
     >
       {children}
@@ -63,7 +67,9 @@ const Text = ({
       className={className}
       target={newTab ? "_blank" : undefined}
       backgroundColor={backgroundColor}
+      fontSize={fontSize}
       color={color}
+      italic={italic}
     >
       {mask ? mask : children}
     </LinkRenderer>
@@ -75,8 +81,9 @@ const TextRenderer = styled.div<Omit<Props, "children" | "link">>`
   background-color: ${({ backgroundColor }) =>
     backgroundColor ?? "transparent"};
   color: ${({ color }) => color};
-  display: flex;
+  display: inline;
   font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : "1.2rem")};
+  font-style: ${({ italic }) => (italic ? "italic" : undefined)};
   font-weight: ${({ bold }) => (bold ? "bold" : 400)};
   text-align: ${({ align }) => align};
 `;
@@ -86,6 +93,7 @@ const LinkRenderer = styled.a<Omit<Props, "children" | "link">>`
   color: ${({ color }) => color};
   display: flex;
   font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : "1rem")};
+  font-style: ${({ italic }) => (italic ? "italic" : undefined)};
   font-weight: ${({ bold }) => (bold ? "bold" : 400)};
   text-align: ${({ align }) => align};
 `;
