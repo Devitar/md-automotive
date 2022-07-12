@@ -1,16 +1,16 @@
-import { Divider, Page, Section, Text, Header } from "components";
+import { Divider, Header, Page, Section, Text } from "components";
 import { useEffect, useRef, useState } from "react";
 import { Card, Container, Grid } from "semantic-ui-react";
 import styled from "styled-components";
 import aseLogo from "../assets/ASE-logo.webp";
-import oilIcon from "../assets/oil.webp";
-import tireIcon from "../assets/tire.webp";
-import engineIcon from "../assets/car-engine.webp";
-import carIcon from "../assets/automobile.webp";
 import engineBlock from "../assets/auto-engine-block.webp";
-import autoShopFront from "../assets/md-automotive-front.webp";
-import wallPlaque from "../assets/plaque.webp";
+import carIcon from "../assets/automobile.webp";
+import engineIcon from "../assets/car-engine.webp";
 import aboutUsImg from "../assets/corner.webp";
+import autoShopFront from "../assets/md-automotive-front.webp";
+import oilIcon from "../assets/oil.webp";
+import wallPlaque from "../assets/plaque.webp";
+import tireIcon from "../assets/tire.webp";
 
 /** Types */
 
