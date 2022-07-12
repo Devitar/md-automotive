@@ -1,4 +1,4 @@
-import Background from "assets/carbon-fiber-woven-texture.jpg";
+import Background from "assets/carbon-fiber-woven-texture.webp";
 import React from "react";
 import styled from "styled-components";
 import { Navbar, NavbarMobile } from "components";

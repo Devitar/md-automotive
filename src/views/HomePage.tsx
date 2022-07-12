@@ -2,15 +2,15 @@ import { Divider, Page, Section, Text, Header } from "components";
 import { useEffect, useRef, useState } from "react";
 import { Card, Container, Grid } from "semantic-ui-react";
 import styled from "styled-components";
-import aseLogo from "../assets/ASE-logo.png";
-import oilIcon from "../assets/oil.png";
-import tireIcon from "../assets/tire.png";
-import engineIcon from "../assets/car-engine.png";
-import carIcon from "../assets/automobile.png";
-import engineBlock from "../assets/auto-engine-block.jpg";
+import aseLogo from "../assets/ASE-logo.webp";
+import oilIcon from "../assets/oil.webp";
+import tireIcon from "../assets/tire.webp";
+import engineIcon from "../assets/car-engine.webp";
+import carIcon from "../assets/automobile.webp";
+import engineBlock from "../assets/auto-engine-block.webp";
 import autoShopFront from "../assets/md-automotive-front.webp";
-import wallPlaque from "../assets/plaque.jpg";
-import aboutUsImg from "../assets/corner.jpg";
+import wallPlaque from "../assets/plaque.webp";
+import aboutUsImg from "../assets/corner.webp";
 
 /** Types */
 
@@ -226,13 +226,7 @@ const HomePage = () => {
           <Grid stackable>
             <Grid.Column width={8}>
               <ImageContainer style={{ height: trustHeight }}>
-                <img
-                  src={wallPlaque}
-                  alt="Wall Plaque"
-                  style={{
-                    transform: "rotate(-90deg)",
-                  }}
-                />
+                <img src={wallPlaque} alt="Wall Plaque" />
               </ImageContainer>
             </Grid.Column>
             <Grid.Column width={8}>
@@ -450,14 +444,13 @@ const HomePage = () => {
 /** Styles */
 
 const ImageContainer = styled.div`
-  border-radius: ${(props) => props.theme.borderRadius};
   display: flex;
   justify-content: center;
+  border-radius: ${(props) => props.theme.borderRadius};
   overflow: hidden;
 
   img {
-    object-fit: cover;
-    height: 100% !important;
+    height: auto;
     width: 100% !important;
   }
 `;

@@ -1,4 +1,4 @@
-import BannerImg from "assets/banner-red.png";
+import BannerImg from "assets/banner-red.webp";
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
