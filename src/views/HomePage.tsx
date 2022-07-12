@@ -99,7 +99,7 @@ const HomePage = () => {
                         <div className="content">Oil Change</div>
                       </h4>
                     </td>
-                    <td className="positive">$40</td>
+                    <td className="positive">$75.00 Full Synthetic</td>
                   </tr>
                   <tr>
                     <td>
@@ -109,10 +109,10 @@ const HomePage = () => {
                           className="ui mini rounded image"
                           alt=""
                         />
-                        <div className="content">Tire Rotation</div>
+                        <div className="content">Timing Bels</div>
                       </h4>
                     </td>
-                    <td className="positive">$40</td>
+                    <td className="positive">Starting at $600.00</td>
                   </tr>
                   <tr>
                     <td>
@@ -122,10 +122,10 @@ const HomePage = () => {
                           className="ui mini rounded image"
                           alt=""
                         />
-                        <div className="content">Other Services</div>
+                        <div className="content">Cooling Systems / Flushes</div>
                       </h4>
                     </td>
-                    <td className="positive">$40</td>
+                    <td className="positive">$140.00 Flat Rate</td>
                   </tr>
                   <tr>
                     <td>
@@ -135,10 +135,10 @@ const HomePage = () => {
                           className="ui mini rounded image"
                           alt=""
                         />
-                        <div className="content">Misc</div>
+                        <div className="content">Transmission Service</div>
                       </h4>
                     </td>
-                    <td className="positive">$40</td>
+                    <td className="positive">Starting at $120.00</td>
                   </tr>
                 </tbody>
               </table>
@@ -193,21 +193,22 @@ const HomePage = () => {
                             </td>
                           </tr>
                           <tr className="positive">
-                            <td>Current Practices</td>
+                            <td>Engine Repair</td>
                             <td>
-                              <i className="icon checkmark"></i> Up to date
+                              <i className="icon checkmark"></i> Light {"&"}{" "}
+                              Heavy
+                            </td>
+                          </tr>
+                          <tr className="positive">
+                            <td>Check Engine Light?</td>
+                            <td>
+                              <i className="icon checkmark"></i> Diagnostics
                             </td>
                           </tr>
                           <tr className="positive">
                             <td>Big job? Small job?</td>
                             <td>
                               <i className="icon checkmark"></i> No Problem!
-                            </td>
-                          </tr>
-                          <tr className="positive">
-                            <td>TBD</td>
-                            <td>
-                              <i className="icon checkmark"></i> TBD
                             </td>
                           </tr>
                         </tbody>
@@ -250,14 +251,22 @@ const HomePage = () => {
                     </Text>
                     <Text bold>before</Text>
                     <Text>
-                      &nbsp;the work is done. Then we will perform the proper
-                      type of diagnosis of your problem and call before the work
-                      is done. A complete explanation of the problem areas are
-                      detailed to you. You will understand what has to be done,
-                      why and what the cost will be. You are a part of the
-                      repair process and the decisions. With a 20+ years
-                      experienced mechanic you'll know you're receiving
-                      unmatched service compared to others in the area.
+                      &nbsp;the work is done.
+                      <br />
+                      <br />
+                      Then we will perform the proper type of diagnosis of your
+                      problem and call before the work is done. A complete
+                      explanation of the problem areas are detailed to you. You
+                      will understand what has to be done, why and what the cost
+                      will be.
+                      <br />
+                      <br />
+                      You are a part of the repair process and the decisions.
+                      <br />
+                      <br />
+                      With a 20+ years experienced mechanic you'll know you're
+                      receiving unmatched service compared to others in the
+                      area.
                     </Text>
                   </Card.Content>
                 </Card>
@@ -279,13 +288,24 @@ const HomePage = () => {
                     </Text>
                     <Divider />
                     <Text>
-                      We have the equipment to do the job RIGHT which will save
-                      you time and money. We know what it takes to service all
-                      your automotive needs.
+                      Been in business since November 2018!
+                      <br />
+                      <br />
+                      We have the equipment to do the job <strong>
+                        RIGHT
+                      </strong>{" "}
+                      which will save you time and money. We know what it takes
+                      to service all your automotive needs.
                       <br />
                       <br />
                       We also can save you money on maintenance. We provide
                       expert, friendly service at affordable pricing.
+                    </Text>
+                    <Divider />
+                    <Text>
+                      Mike started doing mechanic work in 2009! <br /> He loves
+                      doing it, and started rebuilding engines as a hobby before
+                      becoming a professional mechanic.
                     </Text>
                   </Card.Content>
                 </Card>
