@@ -1,5 +1,5 @@
-import CloseIcon from "assets/delete_white.png";
-import HamburgerIcon from "assets/menu_icon_white.png";
+import CloseIcon from "assets/delete_white.webp";
+import HamburgerIcon from "assets/menu_icon_white.webp";
 import { Text } from "components";
 import { useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
