@@ -1,16 +1,19 @@
-import { Divider, Header, Page, Section, Text } from "components";
+import { Divider, Page, Section, Text, Header } from "components";
 import { useEffect, useRef, useState } from "react";
 import { Card, Container, Grid } from "semantic-ui-react";
 import styled from "styled-components";
 import aseLogo from "../assets/ASE-logo.webp";
-import engineBlock from "../assets/auto-engine-block.webp";
-import carIcon from "../assets/automobile.webp";
-import engineIcon from "../assets/car-engine.webp";
-import aboutUsImg from "../assets/corner.webp";
-import autoShopFront from "../assets/md-automotive-front.webp";
 import oilIcon from "../assets/oil.webp";
+import carTransmission from "../assets/car_transmission.png";
+import coolingSystem from "../assets/cooling-system.png";
+import engineBlock from "../assets/auto-engine-block.webp";
+import autoShopFront from "../assets/md-automotive-front.webp";
 import wallPlaque from "../assets/plaque.webp";
-import tireIcon from "../assets/tire.webp";
+import aboutUsImg from "../assets/corner.webp";
+import timingBelt from "../assets/timing-belt.png";
+// import carIcon from "../assets/automobile.webp";
+// import engineIcon from "../assets/car-engine.webp";
+// import tireIcon from "../assets/tire.webp";
 
 /** Types */
 
@@ -57,15 +60,36 @@ const HomePage = () => {
                     <Divider />
                     <Text>
                       All heavy and light work repairs your vehicle could need.
-                      Including custom fabrication, engine and transmission
-                      repair or replacement.
+                      Including:
+                    </Text>
+                    <div className="ui bulleted list">
+                      <div className="item">Custom Fabrication</div>
+                      <div className="item">
+                        <div>Engine</div>
+                        <div className="list">
+                          <div className="item">Overhaul</div>
+                          <div className="item">Rebuild</div>
+                        </div>
+                      </div>
+                      <div className="item">
+                        <div>Transmission</div>
+                        <div className="list">
+                          <div className="item">Rebuild</div>
+                          <div className="item">Repair</div>
+                          <div className="item">Replacement</div>
+                        </div>
+                      </div>
+                      <div className="item">Differentials</div>
+                      <div className="item">Light Body Work</div>
+                      <div className="item">A/C Services</div>
+                    </div>
+                    <Text>
+                      We perform a full variety of diagnostic services to meet
+                      your vehicle's drivability issue supporting suspension
+                      work, brake work, and even welding!
                       <br />
                       <br />
-                      We perform a full variety of diagnostics services to meet
-                      your vehicle's drivability issue.
-                      <br />
-                      <br />
-                      No job too big or too small, please give us a call.
+                      No job too big or too small, please give us a call!
                     </Text>
                   </Card.Content>
                 </Card>
@@ -79,7 +103,7 @@ const HomePage = () => {
           </Grid>
           <Grid>
             <Grid.Column width={16}>
-              <table className="ui celled table unstackable">
+              <table className="ui celled table">
                 <thead>
                   <tr>
                     <th>Service</th>
@@ -104,11 +128,11 @@ const HomePage = () => {
                     <td>
                       <h4 className="ui image header">
                         <img
-                          src={tireIcon}
+                          src={timingBelt}
                           className="ui mini rounded image"
                           alt=""
                         />
-                        <div className="content">Timing Bels</div>
+                        <div className="content">Timing Belts</div>
                       </h4>
                     </td>
                     <td className="positive">Starting at $600.00</td>
@@ -117,7 +141,7 @@ const HomePage = () => {
                     <td>
                       <h4 className="ui image header">
                         <img
-                          src={engineIcon}
+                          src={coolingSystem}
                           className="ui mini rounded image"
                           alt=""
                         />
@@ -130,7 +154,7 @@ const HomePage = () => {
                     <td>
                       <h4 className="ui image header">
                         <img
-                          src={carIcon}
+                          src={carTransmission}
                           className="ui mini rounded image"
                           alt=""
                         />
@@ -152,15 +176,16 @@ const HomePage = () => {
             <Grid.Column width={8}>
               <div className="ui centered card">
                 <Card>
-                  <Card.Content>
+                  <Card.Content style={{ padding: 0 }}>
                     <div
                       style={{
                         display: "flex",
                         justifyContent: "center",
+                        height: servicesHeight,
                       }}
                     >
                       <table
-                        className="ui very basic collapsing celled table"
+                        className="ui very basic collapsing celled table unstackable"
                         style={{
                           // textAlign: "center",
                           width: "100%",
@@ -174,10 +199,12 @@ const HomePage = () => {
                         </thead> */}
                         <tbody>
                           <tr className="positive">
-                            <td>
+                            <td
+                              style={{ paddingRight: 0, paddingLeft: "10px" }}
+                            >
                               <img
                                 src={aseLogo}
-                                className="ui mini rounded image"
+                                className="ui tiny rounded image"
                                 alt="ASE Logo"
                               />
                             </td>
@@ -186,26 +213,42 @@ const HomePage = () => {
                             </td>
                           </tr>
                           <tr className="positive">
-                            <td>Hybrid Capability</td>
+                            <td
+                              style={{ paddingRight: 0, paddingLeft: "10px" }}
+                            >
+                              Hybrid Capability
+                            </td>
                             <td>
                               <i className="icon checkmark"></i> Capable
                             </td>
                           </tr>
                           <tr className="positive">
-                            <td>Engine Repair</td>
+                            <td
+                              style={{ paddingRight: 0, paddingLeft: "10px" }}
+                            >
+                              Engine Repair
+                            </td>
                             <td>
                               <i className="icon checkmark"></i> Light {"&"}{" "}
                               Heavy
                             </td>
                           </tr>
                           <tr className="positive">
-                            <td>Check Engine Light?</td>
+                            <td
+                              style={{ paddingRight: 0, paddingLeft: "10px" }}
+                            >
+                              Check Engine Light?
+                            </td>
                             <td>
                               <i className="icon checkmark"></i> Diagnostics
                             </td>
                           </tr>
                           <tr className="positive">
-                            <td>Big job? Small job?</td>
+                            <td
+                              style={{ paddingRight: 0, paddingLeft: "10px" }}
+                            >
+                              Big job? Small job?
+                            </td>
                             <td>
                               <i className="icon checkmark"></i> No Problem!
                             </td>
@@ -230,7 +273,14 @@ const HomePage = () => {
               </ImageContainer>
             </Grid.Column>
             <Grid.Column width={8}>
-              <div ref={TrustRef}>
+              <div
+                ref={TrustRef}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
                 <Card color="red" fluid>
                   <Card.Content>
                     <Text bold fontSize={20}>
@@ -248,18 +298,21 @@ const HomePage = () => {
                       <br />
                       <br />
                       Then we will perform the proper type of diagnosis of your
-                      problem and call before the work is done. A complete
-                      explanation of the problem areas are detailed to you. You
-                      will understand what has to be done, why and what the cost
-                      will be.
+                      problem and call before the work is done.
+                      <br />
+                      <br />
+                      A complete explanation of the problem areas are detailed
+                      to you. You will understand what has to be done, why and
+                      what the cost will be.
                       <br />
                       <br />
                       You are a part of the repair process and the decisions.
-                      <br />
-                      <br />
-                      With a 20+ years experienced mechanic you'll know you're
-                      receiving unmatched service compared to others in the
-                      area.
+                    </Text>
+                    <Divider />
+                    <Text>
+                      With a <strong>20+</strong> years experienced mechanic
+                      you'll know you're receiving unmatched service compared to
+                      others in the area!
                     </Text>
                   </Card.Content>
                 </Card>
@@ -295,10 +348,20 @@ const HomePage = () => {
                       expert, friendly service at affordable pricing.
                     </Text>
                     <Divider />
+                    <Text bold fontSize={18}>
+                      About Mike:
+                    </Text>
+                    <br />
                     <Text>
-                      Mike started doing mechanic work in 2009! <br /> He loves
-                      doing it, and started rebuilding engines as a hobby before
-                      becoming a professional mechanic.
+                      Mike started doing mechanic work in 2009!
+                      <br />
+                      <br />
+                      He loves doing it, and started rebuilding engines as a
+                      hobby before becoming a professional mechanic.
+                      <br />
+                      <br />
+                      He is hard driven and always strives to bring the best in
+                      the business to the table!
                     </Text>
                   </Card.Content>
                 </Card>
@@ -366,9 +429,9 @@ const HomePage = () => {
               {/* <Grid.Column width={2}>
                 <Divider vertical />
               </Grid.Column> */}
-              <Grid.Column width={8}>
+              <Grid.Column width={8} style={{ marginTop: 58 }}>
                 <CardWrapper>
-                  <Card color="red" fluid style={{ marginTop: 58 }}>
+                  <Card color="red" fluid>
                     <Card.Content>
                       <div style={{ paddingBottom: "8px", paddingTop: "8px" }}>
                         <Text bold fontSize={20}>
