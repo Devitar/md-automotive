@@ -82,8 +82,8 @@ const HomePage = () => {
                     </div>
                     <Text>
                       We perform a full variety of diagnostic services to meet
-                      your vehicle's drivability issue supporting Brake work,
-                      Suspension work, and even welding!
+                      your vehicle's drivability issue supporting suspension
+                      work, brake work, and even welding!
                       <br />
                       <br />
                       No job too big or too small, please give us a call!
