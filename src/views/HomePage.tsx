@@ -444,9 +444,9 @@ const HomePage = () => {
 /** Styles */
 
 const ImageContainer = styled.div`
+  border-radius: ${(props) => props.theme.borderRadius};
   display: flex;
   justify-content: center;
-  border-radius: ${(props) => props.theme.borderRadius};
   overflow: hidden;
 
   img {
