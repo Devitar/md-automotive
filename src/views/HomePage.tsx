@@ -3,6 +3,15 @@ import { Divider, Page, Section, Text, Header } from "components";
 import { useEffect, useRef, useState } from "react";
 import { Card, Container, Grid } from "semantic-ui-react";
 import styled from "styled-components";
+import aseLogo from "../assets/ASE-logo.png";
+import oilIcon from "../assets/oil.png";
+import tireIcon from "../assets/tire.png";
+import engineIcon from "../assets/car-engine.png";
+import carIcon from "../assets/automobile.png";
+import engineBlock from "../assets/auto-engine-block.jpg";
+import autoShopFront from "../assets/md-automotive-front.jpg";
+import wallPlaque from "../assets/plaque.jpg";
+import aboutUsImg from "../assets/corner.jpg";
 
 /** Types */
 
@@ -50,12 +59,13 @@ const HomePage = () => {
                     <Text>
                       All heavy and light work repairs your vehicle could need.
                       Including custom fabrication, engine and transmission
-                      repair or replacement. We perform a full variety of
-                      diagnostics services to meet your vehicle's drivability
-                      issue. We are also hybrid friendly. MD Automotive Repair
-                      is a licensed and insured shop with ASE certification.
-                      Here at MD Automotive Repair we strive to be educated to
-                      the changes in the technology of the automotive industry.
+                      repair or replacement.
+                      <br />
+                      <br />
+                      We perform a full variety of diagnostics services to meet
+                      your vehicle's drivability issue.
+                      <br />
+                      <br />
                       No job too big or too small, please give us a call.
                     </Text>
                   </Card.Content>
@@ -64,8 +74,148 @@ const HomePage = () => {
             </Grid.Column>
             <Grid.Column width={8}>
               <ImageContainer style={{ height: servicesHeight }}>
-                <img src={WaitingRoom} alt="" />
+                <img src={autoShopFront} alt="Car Engine Block" />
               </ImageContainer>
+            </Grid.Column>
+          </Grid>
+          <Grid>
+            <Grid.Column width={16}>
+              <table className="ui celled table unstackable">
+                <thead>
+                  <tr>
+                    <th>Service</th>
+                    <th>Cost</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <h4 className="ui image header">
+                        <img
+                          src={oilIcon}
+                          className="ui mini rounded image"
+                          alt=""
+                        />
+                        <div className="content">Oil Change</div>
+                      </h4>
+                    </td>
+                    <td className="positive">$40</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h4 className="ui image header">
+                        <img
+                          src={tireIcon}
+                          className="ui mini rounded image"
+                          alt=""
+                        />
+                        <div className="content">Tire Rotation</div>
+                      </h4>
+                    </td>
+                    <td className="positive">$40</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h4 className="ui image header">
+                        <img
+                          src={engineIcon}
+                          className="ui mini rounded image"
+                          alt=""
+                        />
+                        <div className="content">Other Services</div>
+                      </h4>
+                    </td>
+                    <td className="positive">$40</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h4 className="ui image header">
+                        <img
+                          src={carIcon}
+                          className="ui mini rounded image"
+                          alt=""
+                        />
+                        <div className="content">Misc</div>
+                      </h4>
+                    </td>
+                    <td className="positive">$40</td>
+                  </tr>
+                </tbody>
+              </table>
+            </Grid.Column>
+          </Grid>
+          <Grid stackable>
+            <Grid.Column width={8}>
+              <ImageContainer style={{ height: servicesHeight }}>
+                <img src={engineBlock} alt="" />
+              </ImageContainer>
+            </Grid.Column>
+            <Grid.Column width={8}>
+              <div className="ui centered card">
+                <Card>
+                  <Card.Content>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <table
+                        className="ui very basic collapsing celled table"
+                        style={{
+                          // textAlign: "center",
+                          width: "100%",
+                        }}
+                      >
+                        {/* <thead>
+                          <tr>
+                            <th>Service</th>
+                            <th>Approved</th>
+                          </tr>
+                        </thead> */}
+                        <tbody>
+                          <tr className="positive">
+                            <td>
+                              <img
+                                src={aseLogo}
+                                className="ui mini rounded image"
+                                alt="ASE Logo"
+                              />
+                            </td>
+                            <td>
+                              <i className="icon checkmark"></i> Certified
+                            </td>
+                          </tr>
+                          <tr className="positive">
+                            <td>Hybrid Capability</td>
+                            <td>
+                              <i className="icon checkmark"></i> Capable
+                            </td>
+                          </tr>
+                          <tr className="positive">
+                            <td>Current Practices</td>
+                            <td>
+                              <i className="icon checkmark"></i> Up to date
+                            </td>
+                          </tr>
+                          <tr className="positive">
+                            <td>Big job? Small job?</td>
+                            <td>
+                              <i className="icon checkmark"></i> No Problem!
+                            </td>
+                          </tr>
+                          <tr className="positive">
+                            <td>TBD</td>
+                            <td>
+                              <i className="icon checkmark"></i> TBD
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </Card.Content>
+                </Card>
+              </div>
             </Grid.Column>
           </Grid>
         </Container>
@@ -76,7 +226,13 @@ const HomePage = () => {
           <Grid stackable>
             <Grid.Column width={8}>
               <ImageContainer style={{ height: trustHeight }}>
-                <img src={WaitingRoom} alt="" />
+                <img
+                  src={wallPlaque}
+                  alt="Wall Plaque"
+                  style={{
+                    transform: "rotate(-90deg)",
+                  }}
+                />
               </ImageContainer>
             </Grid.Column>
             <Grid.Column width={8}>
@@ -137,7 +293,7 @@ const HomePage = () => {
             </Grid.Column>
             <Grid.Column width={8}>
               <ImageContainer style={{ height: aboutUsHeight }}>
-                <img src={WaitingRoom} alt="" />
+                <img src={aboutUsImg} alt="Corner of shop" />
               </ImageContainer>
             </Grid.Column>
           </Grid>
