@@ -1,4 +1,3 @@
-import WaitingRoom from "assets/waiting-room.png";
 import { Divider, Page, Section, Text, Header } from "components";
 import { useEffect, useRef, useState } from "react";
 import { Card, Container, Grid } from "semantic-ui-react";
@@ -9,7 +8,7 @@ import tireIcon from "../assets/tire.png";
 import engineIcon from "../assets/car-engine.png";
 import carIcon from "../assets/automobile.png";
 import engineBlock from "../assets/auto-engine-block.jpg";
-import autoShopFront from "../assets/md-automotive-front.jpg";
+import autoShopFront from "../assets/md-automotive-front.webp";
 import wallPlaque from "../assets/plaque.jpg";
 import aboutUsImg from "../assets/corner.jpg";
 
