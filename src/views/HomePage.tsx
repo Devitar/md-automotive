@@ -178,6 +178,7 @@ const HomePage = () => {
                       style={{
                         display: "flex",
                         justifyContent: "center",
+                        height: servicesHeight,
                       }}
                     >
                       <table
@@ -300,18 +301,21 @@ const HomePage = () => {
                       <br />
                       <br />
                       Then we will perform the proper type of diagnosis of your
-                      problem and call before the work is done. A complete
-                      explanation of the problem areas are detailed to you. You
-                      will understand what has to be done, why and what the cost
-                      will be.
+                      problem and call before the work is done.
+                      <br />
+                      <br />
+                      A complete explanation of the problem areas are detailed
+                      to you. You will understand what has to be done, why and
+                      what the cost will be.
                       <br />
                       <br />
                       You are a part of the repair process and the decisions.
-                      <br />
-                      <br />
-                      With a 20+ years experienced mechanic you'll know you're
-                      receiving unmatched service compared to others in the
-                      area.
+                    </Text>
+                    <Divider />
+                    <Text>
+                      With a <strong>20+</strong> years experienced mechanic
+                      you'll know you're receiving unmatched service compared to
+                      others in the area!
                     </Text>
                   </Card.Content>
                 </Card>
@@ -347,10 +351,20 @@ const HomePage = () => {
                       expert, friendly service at affordable pricing.
                     </Text>
                     <Divider />
+                    <Text bold fontSize={18}>
+                      About Mike:
+                    </Text>
+                    <br />
                     <Text>
-                      Mike started doing mechanic work in 2009! <br /> He loves
-                      doing it, and started rebuilding engines as a hobby before
-                      becoming a professional mechanic.
+                      Mike started doing mechanic work in 2009!
+                      <br />
+                      <br />
+                      He loves doing it, and started rebuilding engines as a
+                      hobby before becoming a professional mechanic.
+                      <br />
+                      <br />
+                      He is hard driven and always strives to bring the best in
+                      the business to the table!
                     </Text>
                   </Card.Content>
                 </Card>
@@ -418,9 +432,9 @@ const HomePage = () => {
               {/* <Grid.Column width={2}>
                 <Divider vertical />
               </Grid.Column> */}
-              <Grid.Column width={8}>
+              <Grid.Column width={8} style={{ marginTop: 58 }}>
                 <CardWrapper>
-                  <Card color="red" fluid style={{ marginTop: 58 }}>
+                  <Card color="red" fluid>
                     <Card.Content>
                       <div style={{ paddingBottom: "8px", paddingTop: "8px" }}>
                         <Text bold fontSize={20}>
