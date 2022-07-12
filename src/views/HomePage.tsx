@@ -1,17 +1,16 @@
-import WaitingRoom from "assets/waiting-room.png";
-import { Divider, Page, Section, Text, Header } from "components";
+import { Divider, Header, Page, Section, Text } from "components";
 import { useEffect, useRef, useState } from "react";
 import { Card, Container, Grid } from "semantic-ui-react";
 import styled from "styled-components";
-import aseLogo from "../assets/ASE-logo.png";
-import oilIcon from "../assets/oil.png";
-import tireIcon from "../assets/tire.png";
-import engineIcon from "../assets/car-engine.png";
-import carIcon from "../assets/automobile.png";
-import engineBlock from "../assets/auto-engine-block.jpg";
-import autoShopFront from "../assets/md-automotive-front.jpg";
-import wallPlaque from "../assets/plaque.jpg";
-import aboutUsImg from "../assets/corner.jpg";
+import aseLogo from "../assets/ASE-logo.webp";
+import engineBlock from "../assets/auto-engine-block.webp";
+import carIcon from "../assets/automobile.webp";
+import engineIcon from "../assets/car-engine.webp";
+import aboutUsImg from "../assets/corner.webp";
+import autoShopFront from "../assets/md-automotive-front.webp";
+import oilIcon from "../assets/oil.webp";
+import wallPlaque from "../assets/plaque.webp";
+import tireIcon from "../assets/tire.webp";
 
 /** Types */
 
@@ -227,13 +226,7 @@ const HomePage = () => {
           <Grid stackable>
             <Grid.Column width={8}>
               <ImageContainer style={{ height: trustHeight }}>
-                <img
-                  src={wallPlaque}
-                  alt="Wall Plaque"
-                  style={{
-                    transform: "rotate(-90deg)",
-                  }}
-                />
+                <img src={wallPlaque} alt="Wall Plaque" />
               </ImageContainer>
             </Grid.Column>
             <Grid.Column width={8}>
@@ -457,8 +450,7 @@ const ImageContainer = styled.div`
   overflow: hidden;
 
   img {
-    object-fit: cover;
-    height: 100% !important;
+    height: auto;
     width: 100% !important;
   }
 `;
