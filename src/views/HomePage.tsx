@@ -1,19 +1,17 @@
-import { Divider, Page, Section, Text, Header } from "components";
+import aseLogo from "assets/ASE-logo.webp";
+import engineBlock from "assets/auto-engine-block.webp";
+import carTransmission from "assets/car_transmission.png";
+import coolingSystem from "assets/cooling-system.png";
+import oilIcon from "assets/oil.webp";
+import { Divider, Header, Page, Section, Text } from "components";
 import { useEffect, useRef, useState } from "react";
 import { Card, Container, Grid } from "semantic-ui-react";
 import styled from "styled-components";
-import aseLogo from "../assets/ASE-logo.webp";
-import oilIcon from "../assets/oil.webp";
-import carTransmission from "../assets/car_transmission.png";
-import coolingSystem from "../assets/cooling-system.png";
-import engineBlock from "../assets/auto-engine-block.webp";
-import autoShopFront from "../assets/md-automotive-front.webp";
-import wallPlaque from "../assets/plaque.webp";
-import aboutUsImg from "../assets/corner.webp";
-import timingBelt from "../assets/timing-belt.png";
-// import carIcon from "../assets/automobile.webp";
-// import engineIcon from "../assets/car-engine.webp";
-// import tireIcon from "../assets/tire.webp";
+import autoShopFront from "assets/md-automotive-front.webp";
+import aboutUsImg from "assets/corner.webp";
+import wallPlaque from "assets/plaque.webp";
+import timingBelt from "assets/timing-belt.png";
+import WrenchesHero from "assets/wrenches_hero.webp";
 
 /** Types */
 
@@ -45,6 +43,50 @@ const HomePage = () => {
 
   return (
     <Page>
+      <HeroContainer>
+        <img src={WrenchesHero} alt="Wrenches in a toolbox" />
+        <div className="logo">LOGO HERE</div>
+        <table className="ui very basic collapsing celled table unstackable">
+          <tbody>
+            <tr className="positive">
+              <td>
+                <img
+                  src={aseLogo}
+                  className="ui tiny rounded image"
+                  alt="ASE Logo"
+                />
+              </td>
+              <td>
+                <i className="icon checkmark"></i> Certified
+              </td>
+            </tr>
+            <tr className="positive">
+              <td>Hybrid Capability</td>
+              <td>
+                <i className="icon checkmark"></i> Capable
+              </td>
+            </tr>
+            <tr className="positive">
+              <td>Engine Repair</td>
+              <td>
+                <i className="icon checkmark"></i> Light &amp; Heavy
+              </td>
+            </tr>
+            <tr className="positive">
+              <td>Check Engine Light?</td>
+              <td>
+                <i className="icon checkmark"></i> Diagnostics
+              </td>
+            </tr>
+            <tr className="positive">
+              <td>Big job? Small job?</td>
+              <td>
+                <i className="icon checkmark"></i> No Problem!
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </HeroContainer>
       <Section id="Services">
         <Container>
           <Header showBanner>Services</Header>
@@ -165,100 +207,6 @@ const HomePage = () => {
                   </tr>
                 </tbody>
               </table>
-            </Grid.Column>
-          </Grid>
-          <Grid stackable>
-            <Grid.Column width={8}>
-              <ImageContainer style={{ height: servicesHeight }}>
-                <img src={engineBlock} alt="" />
-              </ImageContainer>
-            </Grid.Column>
-            <Grid.Column width={8}>
-              <div className="ui centered card">
-                <Card>
-                  <Card.Content style={{ padding: 0 }}>
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        height: servicesHeight,
-                      }}
-                    >
-                      <table
-                        className="ui very basic collapsing celled table unstackable"
-                        style={{
-                          // textAlign: "center",
-                          width: "100%",
-                        }}
-                      >
-                        {/* <thead>
-                          <tr>
-                            <th>Service</th>
-                            <th>Approved</th>
-                          </tr>
-                        </thead> */}
-                        <tbody>
-                          <tr className="positive">
-                            <td
-                              style={{ paddingRight: 0, paddingLeft: "10px" }}
-                            >
-                              <img
-                                src={aseLogo}
-                                className="ui tiny rounded image"
-                                alt="ASE Logo"
-                              />
-                            </td>
-                            <td>
-                              <i className="icon checkmark"></i> Certified
-                            </td>
-                          </tr>
-                          <tr className="positive">
-                            <td
-                              style={{ paddingRight: 0, paddingLeft: "10px" }}
-                            >
-                              Hybrid Capability
-                            </td>
-                            <td>
-                              <i className="icon checkmark"></i> Capable
-                            </td>
-                          </tr>
-                          <tr className="positive">
-                            <td
-                              style={{ paddingRight: 0, paddingLeft: "10px" }}
-                            >
-                              Engine Repair
-                            </td>
-                            <td>
-                              <i className="icon checkmark"></i> Light {"&"}{" "}
-                              Heavy
-                            </td>
-                          </tr>
-                          <tr className="positive">
-                            <td
-                              style={{ paddingRight: 0, paddingLeft: "10px" }}
-                            >
-                              Check Engine Light?
-                            </td>
-                            <td>
-                              <i className="icon checkmark"></i> Diagnostics
-                            </td>
-                          </tr>
-                          <tr className="positive">
-                            <td
-                              style={{ paddingRight: 0, paddingLeft: "10px" }}
-                            >
-                              Big job? Small job?
-                            </td>
-                            <td>
-                              <i className="icon checkmark"></i> No Problem!
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </Card.Content>
-                </Card>
-              </div>
             </Grid.Column>
           </Grid>
         </Container>
@@ -506,6 +454,65 @@ const HomePage = () => {
 
 /** Styles */
 
+const HeroContainer = styled.div`
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+
+  img {
+    height: auto;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  table {
+    background-color: transparent;
+    box-sizing: border-box;
+    height: auto;
+    left: 75%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+
+    td {
+      padding: 8px 12px !important;
+      white-space: nowrap;
+    }
+  }
+
+  .logo {
+    color: white;
+    font-family: "Roboto Slab", serif;
+    font-size: 3rem;
+    left: 25%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-25%, -50%);
+    width: 50%;
+  }
+
+  @media only screen and (max-width: 799px) {
+    height: 350px;
+    margin-top: -5px;
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+
+    table {
+      left: 50%;
+      width: 90vw !important;
+    }
+
+    .logo {
+      display: none;
+    }
+  }
+`;
+
 const ImageContainer = styled.div`
   border-radius: ${(props) => props.theme.borderRadius};
   display: flex;
@@ -514,6 +521,7 @@ const ImageContainer = styled.div`
 
   img {
     height: auto;
+    object-fit: cover;
     width: 100% !important;
   }
 `;
