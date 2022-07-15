@@ -28,6 +28,9 @@ const HomePage = () => {
   const [aboutUsHeight, setAboutUsHeight] = useState<number>(0);
   const [aboutUsWidth, setAboutUsWidth] = useState<number>(0);
 
+  const tableHeightRef = useRef<HTMLTableElement | null>(null);
+  const [tableHeight, setTableHeight] = useState<number>(0);
+
   useEffect(() => {
     setServicesHeight(ServicesRef?.current?.clientHeight ?? 0);
   }, [ServicesRef?.current?.clientHeight]);
@@ -41,12 +44,19 @@ const HomePage = () => {
     setAboutUsWidth(AboutUsRef?.current?.clientWidth ?? 0);
   }, [AboutUsRef?.current?.clientHeight, AboutUsRef?.current?.clientWidth]);
 
+  useEffect(() => {
+    setTableHeight(tableHeightRef?.current?.clientHeight ?? 0);
+  }, [tableHeightRef?.current?.clientHeight]);
+
   return (
     <Page>
-      <HeroContainer>
+      <HeroContainer tableHeight={tableHeight}>
         <img src={WrenchesHero} alt="Wrenches in a toolbox" />
         <div className="logo">LOGO HERE</div>
-        <table className="ui very basic collapsing celled table unstackable">
+        <table
+          className="ui very basic collapsing celled table unstackable"
+          ref={tableHeightRef}
+        >
           <tbody>
             <tr className="positive">
               <td>
@@ -454,7 +464,7 @@ const HomePage = () => {
 
 /** Styles */
 
-const HeroContainer = styled.div`
+const HeroContainer = styled.div<{ tableHeight: number }>`
   height: 500px;
   overflow: hidden;
   position: relative;
@@ -494,10 +504,12 @@ const HeroContainer = styled.div`
   }
 
   @media only screen and (max-width: 799px) {
-    height: 350px;
+    height: ${({ tableHeight }) => `${tableHeight + 28}px`};
     margin-top: -5px;
+    box-sizing: border-box;
 
     img {
+      display: none;
       height: 100%;
       width: auto;
     }
@@ -505,6 +517,7 @@ const HeroContainer = styled.div`
     table {
       left: 50%;
       width: 90vw !important;
+      margin-top: 0px !important;
     }
 
     .logo {
