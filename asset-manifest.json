@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.eb10a684.css",
-    "main.js": "/static/js/main.00e542b9.js",
-    "static/media/md-automotive-front.webp": "/static/media/md-automotive-front.b04bc1fe0c8834f5a6bb.webp",
-    "static/media/corner.webp": "/static/media/corner.7272f1624407167ff8e6.webp",
-    "static/media/wrenches_hero.webp": "/static/media/wrenches_hero.e5fda20f651357b749ba.webp",
-    "static/media/plaque.webp": "/static/media/plaque.df8454c79ce024f29765.webp",
-    "static/media/logo-transparent.webp": "/static/media/logo-transparent.e2c8f9cf19939f9a9857.webp",
-    "static/media/logo-transparent-wide.webp": "/static/media/logo-transparent-wide.9866306d4caae7779d8b.webp",
+    "main.js": "/static/js/main.a5b4a983.js",
     "static/media/carbon-fiber-woven-texture.webp": "/static/media/carbon-fiber-woven-texture.6418a09e5ad841c4c652.webp",
+    "static/media/logo-transparent.webp": "/static/media/logo-transparent.980cdf93e7a876f37c33.webp",
+    "static/media/md-automotive-front.webp": "/static/media/md-automotive-front.4a53d7cabaa48bea739d.webp",
     "static/media/ASE-logo.webp": "/static/media/ASE-logo.45e56563744edc842c7c.webp",
+    "static/media/plaque.webp": "/static/media/plaque.13835039a93061c6422a.webp",
+    "static/media/logo-transparent-wide.webp": "/static/media/logo-transparent-wide.6e247a5cb6e9891c56b1.webp",
+    "static/media/corner.webp": "/static/media/corner.3a36943e73b69a477bad.webp",
+    "static/media/wrenches_hero.webp": "/static/media/wrenches_hero.6a5a4253e5a3f32e6dc8.webp",
     "static/media/timing-belt.png": "/static/media/timing-belt.267f2e8f4015f6bd3979.png",
     "static/media/cooling-system.png": "/static/media/cooling-system.a13fcd4cb3e0b04e1e09.png",
     "static/media/car_transmission.png": "/static/media/car_transmission.36bf8ab7ceb80222c239.png",
@@ -19,10 +19,10 @@
     "static/media/banner-red.webp": "/static/media/banner-red.b0eda89fead623dd2daa.webp",
     "index.html": "/index.html",
     "main.eb10a684.css.map": "/static/css/main.eb10a684.css.map",
-    "main.00e542b9.js.map": "/static/js/main.00e542b9.js.map"
+    "main.a5b4a983.js.map": "/static/js/main.a5b4a983.js.map"
   },
   "entrypoints": [
     "static/css/main.eb10a684.css",
-    "static/js/main.00e542b9.js"
+    "static/js/main.a5b4a983.js"
   ]
 }
