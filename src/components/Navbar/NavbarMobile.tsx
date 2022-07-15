@@ -1,4 +1,5 @@
 import CloseIcon from "assets/delete_white.webp";
+import LogoWide from "assets/logo-transparent-wide.webp";
 import HamburgerIcon from "assets/menu_icon_white.webp";
 import { Text } from "components";
 import { useState } from "react";
@@ -14,7 +15,9 @@ const NavbarMobile = () => {
   return (
     <Wrapper>
       <TopBar className="menu">
-        <LogoContainer>LOGO HERE</LogoContainer>
+        <LogoContainer>
+          <img src={LogoWide} alt="" />
+        </LogoContainer>
         <MenuBtn src={HamburgerIcon} onClick={() => setIsOpen(true)} />
       </TopBar>
       <MenuWrapper isOpen={isOpen}>
@@ -70,7 +73,7 @@ const NavbarMobile = () => {
 /** Styles */
 
 const Wrapper = styled.div`
-  height: 41px;
+  height: 60px;
   width: 100vw;
   left: 0;
   position: fixed;
@@ -106,7 +109,7 @@ const TopBar = styled.div`
 
 const MenuBtn = styled.img`
   cursor: pointer;
-  height: 100%;
+  height: 75%;
   width: auto;
 `;
 
@@ -120,7 +123,7 @@ const MenuWrapper = styled.div<{ isOpen: boolean }>`
   background-color: black;
   border-radius: ${(props) => props.theme.borderRadius};
   box-shadow: 0px 7px 23px -4px rgba(0, 0, 0, 0.75);
-  left: ${({ isOpen }) => (isOpen ? "0%" : "100%;")};
+  left: ${({ isOpen }) => (isOpen ? "50%" : "100%;")};
   overflow: hidden;
   position: fixed;
   top: 0;
@@ -129,8 +132,13 @@ const MenuWrapper = styled.div<{ isOpen: boolean }>`
 `;
 
 const LogoContainer = styled.div`
-  flex: 1;
-  color: white;
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 40px;
+    width: 250px;
+  }
 `;
 
 /** Exports */
