@@ -28,9 +28,6 @@ const HomePage = () => {
   const [aboutUsHeight, setAboutUsHeight] = useState<number>(0);
   const [aboutUsWidth, setAboutUsWidth] = useState<number>(0);
 
-  const tableHeightRef = useRef<HTMLTableElement | null>(null);
-  const [tableHeight, setTableHeight] = useState<number>(0);
-
   useEffect(() => {
     setServicesHeight(ServicesRef?.current?.clientHeight ?? 0);
   }, [ServicesRef?.current?.clientHeight]);
@@ -44,22 +41,15 @@ const HomePage = () => {
     setAboutUsWidth(AboutUsRef?.current?.clientWidth ?? 0);
   }, [AboutUsRef?.current?.clientHeight, AboutUsRef?.current?.clientWidth]);
 
-  useEffect(() => {
-    setTableHeight(tableHeightRef?.current?.clientHeight ?? 0);
-  }, [tableHeightRef?.current?.clientHeight]);
-
   return (
     <Page>
-      <HeroContainer tableHeight={tableHeight}>
-        <img src={WrenchesHero} alt="" />
+      <HeroContainer id="Hero">
+        <img className="hero-image" src={WrenchesHero} alt="" />
         <div className="hero-content">
           <div className="logo">
             <img src={Logo} alt="" />
           </div>
-          <table
-            className="ui very basic collapsing celled table unstackable"
-            ref={tableHeightRef}
-          >
+          <table className="ui very basic collapsing celled table unstackable">
             <tbody>
               <tr className="positive">
                 <td>
@@ -363,7 +353,7 @@ const HomePage = () => {
           </Grid>
         </Container>
       </Section>
-      <Section background={"secondary"}>
+      <Section id="ContactUs" background={"secondary"}>
         <Container>
           <Header>Contact Us</Header>
           <div
@@ -491,7 +481,7 @@ const HomePage = () => {
 
 /** Styles */
 
-const HeroContainer = styled.div<{ tableHeight: number }>`
+const HeroContainer = styled.div`
   height: 500px;
   overflow: hidden;
   position: relative;
@@ -540,15 +530,20 @@ const HeroContainer = styled.div<{ tableHeight: number }>`
 
   @media only screen and (max-width: 799px) {
     box-sizing: border-box;
-    height: ${({ tableHeight }) => `${tableHeight + 28}px`};
+    max-height: 310px;
+    margin-top: -5px;
 
     .hero-image {
       display: none;
     }
 
+    .hero-content {
+      padding-top: 0px;
+    }
+
     table {
-      left: 50%;
-      width: 90vw !important;
+      height: 100%;
+      width: 100% !important;
     }
 
     .logo {

@@ -16,7 +16,9 @@ const NavbarMobile = () => {
     <Wrapper>
       <TopBar className="menu">
         <LogoContainer>
-          <img src={LogoWide} alt="" />
+          <ScrollLink to="Hero" spy smooth duration={500} offset={-70}>
+            <img src={LogoWide} alt="" />
+          </ScrollLink>
         </LogoContainer>
         <MenuBtn src={HamburgerIcon} onClick={() => setIsOpen(true)} />
       </TopBar>
@@ -51,7 +53,20 @@ const NavbarMobile = () => {
               offset={-50}
               onClick={() => setIsOpen(false)}
             >
-              About Us
+              About
+            </ScrollLink>
+          </Menu.Item>
+
+          <Menu.Item name="contact">
+            <ScrollLink
+              to="ContactUs"
+              spy
+              smooth
+              duration={500}
+              offset={-50}
+              onClick={() => setIsOpen(false)}
+            >
+              Contact
             </ScrollLink>
           </Menu.Item>
 
@@ -123,7 +138,7 @@ const MenuWrapper = styled.div<{ isOpen: boolean }>`
   background-color: black;
   border-radius: ${(props) => props.theme.borderRadius};
   box-shadow: 0px 7px 23px -4px rgba(0, 0, 0, 0.75);
-  left: ${({ isOpen }) => (isOpen ? "50%" : "100%;")};
+  left: ${({ isOpen }) => (isOpen ? "50%" : "105%;")};
   overflow: hidden;
   position: fixed;
   top: 0;
