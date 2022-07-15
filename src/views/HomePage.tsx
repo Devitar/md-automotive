@@ -159,6 +159,11 @@ const HomePage = () => {
                       <div className="item">
                         <Text>A/C Services</Text>
                       </div>
+                      <div className="item">
+                        <Text italic bold>
+                          And more!
+                        </Text>
+                      </div>
                     </div>
                     <Text>
                       We perform a full variety of diagnostic services to meet
@@ -168,6 +173,9 @@ const HomePage = () => {
                       <br />
                       No job too big or too small, please give us a call!
                     </Text>
+                    <CTAButton href="tel:+1 (385) 336 - 3652">
+                      Schedule an Appointment
+                    </CTAButton>
                   </Card.Content>
                 </Card>
               </div>
@@ -176,7 +184,7 @@ const HomePage = () => {
               <ImageContainer imageHeight={servicesHeight}>
                 <img
                   src={autoShopFront}
-                  alt="Front entrance of MD Automotive location."
+                  alt="Front entrance of MD Automotive Repair location."
                 />
               </ImageContainer>
             </Grid.Column>
@@ -303,8 +311,8 @@ const HomePage = () => {
                       &nbsp;the work is done.
                       <br />
                       <br />
-                      Then we will perform the proper type of diagnosis of your
-                      problem and call before the work is done.
+                      We perform an extensive and proper diagnosis of your
+                      problem and call you before the work is done.
                       <br />
                       <br />
                       A complete explanation of the problem areas are detailed
@@ -336,22 +344,20 @@ const HomePage = () => {
                 <Card color="red" fluid>
                   <Card.Content>
                     <Text bold fontSize={"1.5rem"} header>
-                      We are your expert specialty shop without inflated prices!
+                      MD Automotive Repair is your expert specialty shop without
+                      inflated prices!
                     </Text>
                     <Divider />
                     <Text>
-                      Been in business since November 2018!
+                      We were established in November 2018 with one goal: To do
+                      the <i>right</i> job, with the <i>right</i>
+                      &nbsp;equipment. We want to <i>save</i> you time and
+                      money!
                       <br />
                       <br />
-                      We have the equipment to do the job <strong>
-                        RIGHT
-                      </strong>{" "}
-                      which will save you time and money. We know what it takes
-                      to service all your automotive needs.
-                      <br />
-                      <br />
-                      We also can save you money on maintenance. We provide
-                      expert, friendly service at affordable pricing.
+                      We aren't hiding behind an underwriter, curtains or any
+                      smoke and mirrors. You are a part of the repair process
+                      and the decisions.
                     </Text>
                     <Divider />
                     <Text bold fontSize={"1.3rem"}>
@@ -359,15 +365,16 @@ const HomePage = () => {
                     </Text>
                     <br />
                     <Text>
-                      Mike Davis, owner and operator of MD Automotive, has been
-                      doing mechanic work since 2009!
+                      Mike Davis, owner and operator of MD Automotive Repair,
+                      has been a professional mechanic since 2009.
                       <br />
                       <br />
-                      He loves doing it, and started rebuilding engines as a
-                      hobby before becoming a professional mechanic.
+                      He loves working on cars and solving problems, and was
+                      rebuilding engines as a hobby prior to becoming ASE
+                      Certified and working in a mechanic shop.
                       <br />
                       <br />
-                      He is hard driven and always strives to bring the best in
+                      He is hard-driven and always strives to bring the best in
                       the business to the table!
                     </Text>
                   </Card.Content>
@@ -605,6 +612,34 @@ const HeroContainer = styled.div`
 
     .logo {
       display: none;
+    }
+  }
+`;
+
+const CTAButton = styled.a`
+  border: 1px solid #c44141;
+  color: #c44141;
+  display: block;
+  margin-top: 2rem;
+  padding: 8px;
+  text-align: center;
+  transition: color 0.35s, background-color 0.35s, border 0.35s !important;
+
+  @media only screen and (min-width: 800px) {
+    &:hover {
+      background-color: #c44141;
+      border: 1px solid white;
+      color: white;
+    }
+  }
+
+  @media only screen and (max-width: 799px) {
+    background-color: #c44141;
+    border: 1px solid white;
+    color: white;
+
+    &:hover {
+      color: white;
     }
   }
 `;
