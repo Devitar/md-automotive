@@ -1,17 +1,17 @@
 import aseLogo from "assets/ASE-logo.webp";
-// import engineBlock from "assets/auto-engine-block.webp";
 import carTransmission from "assets/car_transmission.png";
 import coolingSystem from "assets/cooling-system.png";
+import aboutUsImg from "assets/corner.webp";
+import Logo from "assets/logo-transparent.webp";
+import autoShopFront from "assets/md-automotive-front.webp";
 import oilIcon from "assets/oil.webp";
+import wallPlaque from "assets/plaque.webp";
+import timingBelt from "assets/timing-belt.png";
+import WrenchesHero from "assets/wrenches_hero.webp";
 import { Divider, Header, Page, Section, Text } from "components";
 import { useEffect, useRef, useState } from "react";
 import { Card, Container, Grid } from "semantic-ui-react";
 import styled from "styled-components";
-import autoShopFront from "assets/md-automotive-front.webp";
-import aboutUsImg from "assets/corner.webp";
-import wallPlaque from "assets/plaque.webp";
-import timingBelt from "assets/timing-belt.png";
-import WrenchesHero from "assets/wrenches_hero.webp";
 
 /** Types */
 
@@ -28,9 +28,6 @@ const HomePage = () => {
   const [aboutUsHeight, setAboutUsHeight] = useState<number>(0);
   const [aboutUsWidth, setAboutUsWidth] = useState<number>(0);
 
-  const tableHeightRef = useRef<HTMLTableElement | null>(null);
-  const [tableHeight, setTableHeight] = useState<number>(0);
-
   useEffect(() => {
     setServicesHeight(ServicesRef?.current?.clientHeight ?? 0);
   }, [ServicesRef?.current?.clientHeight]);
@@ -44,58 +41,55 @@ const HomePage = () => {
     setAboutUsWidth(AboutUsRef?.current?.clientWidth ?? 0);
   }, [AboutUsRef?.current?.clientHeight, AboutUsRef?.current?.clientWidth]);
 
-  useEffect(() => {
-    setTableHeight(tableHeightRef?.current?.clientHeight ?? 0);
-  }, [tableHeightRef?.current?.clientHeight]);
-
   return (
     <Page>
-      <HeroContainer tableHeight={tableHeight}>
-        <img src={WrenchesHero} alt="" />
-        <div className="logo">LOGO HERE</div>
-        <table
-          className="ui very basic collapsing celled table unstackable"
-          ref={tableHeightRef}
-        >
-          <tbody>
-            <tr className="positive">
-              <td>
-                <img
-                  src={aseLogo}
-                  className="ui tiny rounded image"
-                  alt="ASE Logo"
-                />
-              </td>
-              <td>
-                <i className="icon checkmark"></i> Certified
-              </td>
-            </tr>
-            <tr className="positive">
-              <td>Hybrid Capability</td>
-              <td>
-                <i className="icon checkmark"></i> Capable
-              </td>
-            </tr>
-            <tr className="positive">
-              <td>Engine Repair</td>
-              <td>
-                <i className="icon checkmark"></i> Light &amp; Heavy
-              </td>
-            </tr>
-            <tr className="positive">
-              <td>Check Engine Light?</td>
-              <td>
-                <i className="icon checkmark"></i> Diagnostics
-              </td>
-            </tr>
-            <tr className="positive">
-              <td>Big job? Small job?</td>
-              <td>
-                <i className="icon checkmark"></i> No Problem!
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <HeroContainer id="Hero">
+        <img className="hero-image" src={WrenchesHero} alt="" />
+        <div className="hero-content">
+          <div className="logo">
+            <img src={Logo} alt="" />
+          </div>
+          <table className="ui very basic collapsing celled table unstackable">
+            <tbody>
+              <tr className="positive">
+                <td>
+                  <img
+                    src={aseLogo}
+                    className="ui tiny rounded image"
+                    alt="ASE Logo"
+                  />
+                </td>
+                <td>
+                  <i className="icon checkmark"></i> Certified
+                </td>
+              </tr>
+              <tr className="positive">
+                <td>Hybrid Capability</td>
+                <td>
+                  <i className="icon checkmark"></i> Capable
+                </td>
+              </tr>
+              <tr className="positive">
+                <td>Engine Repair</td>
+                <td>
+                  <i className="icon checkmark"></i> Light &amp; Heavy
+                </td>
+              </tr>
+              <tr className="positive">
+                <td>Check Engine Light?</td>
+                <td>
+                  <i className="icon checkmark"></i> Diagnostics
+                </td>
+              </tr>
+              <tr className="positive">
+                <td>Big job? Small job?</td>
+                <td>
+                  <i className="icon checkmark"></i> No Problem!
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </HeroContainer>
       <Section id="Services">
         <Container>
@@ -359,7 +353,7 @@ const HomePage = () => {
           </Grid>
         </Container>
       </Section>
-      <Section background={"secondary"}>
+      <Section id="ContactUs" background={"secondary"}>
         <Container>
           <Header>Contact Us</Header>
           <div
@@ -487,27 +481,35 @@ const HomePage = () => {
 
 /** Styles */
 
-const HeroContainer = styled.div<{ tableHeight: number }>`
+const HeroContainer = styled.div`
   height: 500px;
   overflow: hidden;
   position: relative;
   width: 100vw;
 
-  img {
+  .hero-image {
     height: auto;
     object-fit: cover;
+    width: 100%;
+  }
+
+  .hero-content {
+    align-items: center;
+    display: flex;
+    gap: 10rem;
+    height: 100%;
+    justify-content: center;
+    padding-top: 8px;
+    position: absolute;
+    top: 0;
     width: 100%;
   }
 
   table {
     background-color: transparent;
     box-sizing: border-box;
-    height: auto;
-    left: 75%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: auto;
+    height: 80%;
+    margin-top: 0px !important;
 
     td {
       padding: 8px 12px !important;
@@ -516,31 +518,32 @@ const HeroContainer = styled.div<{ tableHeight: number }>`
   }
 
   .logo {
-    color: white;
-    font-family: "Roboto Slab", serif;
-    font-size: 3rem;
-    left: 25%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-25%, -50%);
-    width: 50%;
+    max-width: 325px;
+    width: 30%;
+
+    img {
+      height: auto;
+      object-fit: contain;
+      width: 100%;
+    }
   }
 
   @media only screen and (max-width: 799px) {
-    height: ${({ tableHeight }) => `${tableHeight + 28}px`};
-    margin-top: -5px;
     box-sizing: border-box;
+    max-height: 310px;
+    margin-top: -5px;
 
-    img {
+    .hero-image {
       display: none;
-      height: 100%;
-      width: auto;
+    }
+
+    .hero-content {
+      padding-top: 0px;
     }
 
     table {
-      left: 50%;
-      width: 90vw !important;
-      margin-top: 0px !important;
+      height: 100%;
+      width: 100% !important;
     }
 
     .logo {

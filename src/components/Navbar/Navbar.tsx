@@ -1,3 +1,4 @@
+import LogoWide from "assets/logo-transparent-wide.webp";
 import { Link as ScrollLink } from "react-scroll";
 import { Menu } from "semantic-ui-react";
 import styled from "styled-components";
@@ -9,18 +10,28 @@ const Navbar = () => {
     <Wrapper>
       <Menu fixed="top">
         <Menu.Item header>
-          <LogoContainer>LOGO HERE</LogoContainer>
+          <LogoContainer>
+            <ScrollLink to="Hero" spy smooth duration={500} offset={-70}>
+              <img src={LogoWide} alt="" />
+            </ScrollLink>
+          </LogoContainer>
         </Menu.Item>
 
         <Menu.Item position="right" name="services">
-          <ScrollLink to={"Services"} spy smooth duration={500} offset={-50}>
+          <ScrollLink to="Services" spy smooth duration={500} offset={-65}>
             Services
           </ScrollLink>
         </Menu.Item>
 
         <Menu.Item name="aboutus">
-          <ScrollLink to={"AboutUs"} spy smooth duration={500} offset={-50}>
-            About Us
+          <ScrollLink to="AboutUs" spy smooth duration={500} offset={-65}>
+            About
+          </ScrollLink>
+        </Menu.Item>
+
+        <Menu.Item name="contact">
+          <ScrollLink to="ContactUs" spy smooth duration={500} offset={-65}>
+            Contact
           </ScrollLink>
         </Menu.Item>
 
@@ -49,6 +60,7 @@ const Wrapper = styled.div`
 
   .menu {
     background-color: black;
+    box-shadow: 0px 7px 23px -4px rgba(0, 0, 0, 0.75);
   }
 
   @media only screen and (max-width: 800px) {
@@ -57,8 +69,10 @@ const Wrapper = styled.div`
 `;
 
 const LogoContainer = styled.div`
-  flex: 1;
-  color: white;
+  img {
+    height: 40px;
+    width: 250px;
+  }
 `;
 
 /** Exports */
