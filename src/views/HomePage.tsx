@@ -51,7 +51,7 @@ const HomePage = () => {
   return (
     <Page>
       <HeroContainer tableHeight={tableHeight}>
-        <img className="hero-image" src={WrenchesHero} alt="" />
+        <img src={WrenchesHero} alt="" />
         <div className="hero-content">
           <div className="logo">
             <img src={Logo} alt="" />
@@ -109,7 +109,7 @@ const HomePage = () => {
               <div ref={ServicesRef}>
                 <Card color="red" fluid>
                   <Card.Content>
-                    <Text bold fontSize={20}>
+                    <Text bold fontSize={"1.5rem"} header>
                       MD Automotive Repair specializes in all makes and models
                       services!
                     </Text>
@@ -119,25 +119,47 @@ const HomePage = () => {
                       Including:
                     </Text>
                     <div className="ui bulleted list">
-                      <div className="item">Custom Fabrication</div>
                       <div className="item">
-                        <div>Engine</div>
+                        <Text>Custom Fabrication</Text>
+                      </div>
+                      <div className="item">
+                        <div>
+                          <Text>Engine</Text>
+                        </div>
                         <div className="list">
-                          <div className="item">Overhaul</div>
-                          <div className="item">Rebuild</div>
+                          <div className="item">
+                            <Text>Overhaul</Text>
+                          </div>
+                          <div className="item">
+                            <Text>Rebuild</Text>
+                          </div>
                         </div>
                       </div>
                       <div className="item">
-                        <div>Transmission</div>
+                        <div>
+                          <Text>Transmission</Text>
+                        </div>
                         <div className="list">
-                          <div className="item">Rebuild</div>
-                          <div className="item">Repair</div>
-                          <div className="item">Replacement</div>
+                          <div className="item">
+                            <Text>Rebuild</Text>
+                          </div>
+                          <div className="item">
+                            <Text>Repair</Text>
+                          </div>
+                          <div className="item">
+                            <Text>Replacement</Text>
+                          </div>
                         </div>
                       </div>
-                      <div className="item">Differentials</div>
-                      <div className="item">Light Body Work</div>
-                      <div className="item">A/C Services</div>
+                      <div className="item">
+                        <Text>Differentials</Text>
+                      </div>
+                      <div className="item">
+                        <Text>Light Body Work</Text>
+                      </div>
+                      <div className="item">
+                        <Text>A/C Services</Text>
+                      </div>
                     </div>
                     <Text>
                       We perform a full variety of diagnostic services to meet
@@ -152,8 +174,11 @@ const HomePage = () => {
               </div>
             </Grid.Column>
             <Grid.Column width={8}>
-              <ImageContainer style={{ height: servicesHeight }}>
-                <img src={autoShopFront} alt="Car Engine Block" />
+              <ImageContainer imageHeight={servicesHeight}>
+                <img
+                  src={autoShopFront}
+                  alt="Front entrance of MD Automotive location."
+                />
               </ImageContainer>
             </Grid.Column>
           </Grid>
@@ -230,8 +255,8 @@ const HomePage = () => {
           <Header showBanner>Trust</Header>
           <Grid stackable>
             <Grid.Column width={8}>
-              <ImageContainer style={{ height: trustHeight }}>
-                <img src={wallPlaque} alt="Wall Plaque" />
+              <ImageContainer imageHeight={trustHeight}>
+                <img src={wallPlaque} alt="" />
               </ImageContainer>
             </Grid.Column>
             <Grid.Column width={8}>
@@ -245,7 +270,7 @@ const HomePage = () => {
               >
                 <Card color="red" fluid>
                   <Card.Content>
-                    <Text bold fontSize={20}>
+                    <Text bold fontSize={"1.5rem"}>
                       We Listen To Your Needs!
                     </Text>
                     <Divider />
@@ -291,7 +316,7 @@ const HomePage = () => {
               <div ref={AboutUsRef}>
                 <Card color="red" fluid>
                   <Card.Content>
-                    <Text bold fontSize={20}>
+                    <Text bold fontSize={"1.5rem"}>
                       We are your expert specialty shop without inflated prices!
                     </Text>
                     <Divider />
@@ -310,12 +335,13 @@ const HomePage = () => {
                       expert, friendly service at affordable pricing.
                     </Text>
                     <Divider />
-                    <Text bold fontSize={18}>
-                      About Mike:
+                    <Text bold fontSize={"1.3rem"}>
+                      About Us:
                     </Text>
                     <br />
                     <Text>
-                      Mike started doing mechanic work in 2009!
+                      Mike Davis, owner and operator of MD Automotive, has been
+                      doing mechanic work since 2009!
                       <br />
                       <br />
                       He loves doing it, and started rebuilding engines as a
@@ -330,8 +356,8 @@ const HomePage = () => {
               </div>
             </Grid.Column>
             <Grid.Column width={8}>
-              <ImageContainer style={{ height: aboutUsHeight }}>
-                <img src={aboutUsImg} alt="Corner of shop" />
+              <ImageContainer imageHeight={aboutUsHeight}>
+                <img src={aboutUsImg} alt="" />
               </ImageContainer>
             </Grid.Column>
           </Grid>
@@ -364,7 +390,7 @@ const HomePage = () => {
                     <Text
                       link
                       mask={"1274 W 300 S St, Lindon, UT 84042"}
-                      fontSize={16}
+                      fontSize={"1.1rem"}
                       color="white"
                       textDecoration="underline"
                     >
@@ -393,12 +419,12 @@ const HomePage = () => {
                   <Card color="red" fluid>
                     <Card.Content>
                       <div style={{ paddingBottom: "8px", paddingTop: "8px" }}>
-                        <Text bold fontSize={20}>
+                        <Text bold fontSize={"1.5rem"}>
                           Phone:{" "}
                         </Text>
                         <Text
                           link="telephone"
-                          fontSize={20}
+                          fontSize={"1.5rem"}
                           textDecoration="underline"
                         >
                           +1 (385) 336 - 3652
@@ -531,16 +557,21 @@ const HeroContainer = styled.div<{ tableHeight: number }>`
   }
 `;
 
-const ImageContainer = styled.div`
+const ImageContainer = styled.div<{ imageHeight: number }>`
   border-radius: ${(props) => props.theme.borderRadius};
   display: flex;
   justify-content: center;
   overflow: hidden;
+  height: ${({ imageHeight }) => `${imageHeight}px`};
 
   img {
     height: auto;
     object-fit: cover;
     width: 100% !important;
+  }
+
+  @media only screen and (max-width: 799px) {
+    height: ${({ imageHeight }) => `${imageHeight / 2}px`};
   }
 `;
 
