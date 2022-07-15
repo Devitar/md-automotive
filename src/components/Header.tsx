@@ -21,7 +21,7 @@ const Header = ({ children, showBanner }: React.PropsWithChildren<Props>) => {
 
   return showBanner ? (
     <Wrapper>
-      <Banner src={BannerImg} style={{ width: textWidth + 100 }} />
+      <Banner src={BannerImg} style={{ width: textWidth + 100 }} alt="" />
       <SectionHeaderText ref={textRef}>{children}</SectionHeaderText>
     </Wrapper>
   ) : (

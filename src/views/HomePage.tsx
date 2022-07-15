@@ -60,31 +60,40 @@ const HomePage = () => {
                   />
                 </td>
                 <td>
-                  <i className="icon checkmark"></i> Certified
+                  <i className="icon checkmark"></i> <Text>Certified</Text>
                 </td>
               </tr>
               <tr className="positive">
-                <td>Hybrid Capability</td>
                 <td>
-                  <i className="icon checkmark"></i> Capable
+                  <Text>Hybrid Capability</Text>
+                </td>
+                <td>
+                  <i className="icon checkmark"></i> <Text>Capable</Text>
                 </td>
               </tr>
               <tr className="positive">
-                <td>Engine Repair</td>
                 <td>
-                  <i className="icon checkmark"></i> Light &amp; Heavy
+                  <Text>Engine Repair</Text>
+                </td>
+                <td>
+                  <i className="icon checkmark"></i>{" "}
+                  <Text>Light &amp; Heavy</Text>
                 </td>
               </tr>
               <tr className="positive">
-                <td>Check Engine Light?</td>
                 <td>
-                  <i className="icon checkmark"></i> Diagnostics
+                  <Text>Check Engine Light?</Text>
+                </td>
+                <td>
+                  <i className="icon checkmark"></i> <Text>Diagnostics</Text>
                 </td>
               </tr>
               <tr className="positive">
-                <td>Big job? Small job?</td>
                 <td>
-                  <i className="icon checkmark"></i> No Problem!
+                  <Text>Big job? Small job?</Text>
+                </td>
+                <td>
+                  <i className="icon checkmark"></i> <Text>No Problem!</Text>
                 </td>
               </tr>
             </tbody>
@@ -177,8 +186,12 @@ const HomePage = () => {
               <table className="ui celled table">
                 <thead>
                   <tr>
-                    <th>Service</th>
-                    <th>Cost</th>
+                    <th>
+                      <Text>Service</Text>
+                    </th>
+                    <th>
+                      <Text>Cost</Text>
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -190,10 +203,14 @@ const HomePage = () => {
                           className="ui mini rounded image"
                           alt=""
                         />
-                        <div className="content">Oil Change</div>
+                        <div className="content">
+                          <Text>Oil Change</Text>
+                        </div>
                       </h4>
                     </td>
-                    <td className="positive">$75.00 Full Synthetic</td>
+                    <td className="positive">
+                      <Text>$75.00 Full Synthetic</Text>
+                    </td>
                   </tr>
                   <tr>
                     <td>
@@ -203,10 +220,14 @@ const HomePage = () => {
                           className="ui mini rounded image"
                           alt=""
                         />
-                        <div className="content">Timing Belts</div>
+                        <div className="content">
+                          <Text>Timing Belts</Text>
+                        </div>
                       </h4>
                     </td>
-                    <td className="positive">Starting at $600.00</td>
+                    <td className="positive">
+                      <Text>Starting at $600.00</Text>
+                    </td>
                   </tr>
                   <tr>
                     <td>
@@ -216,10 +237,14 @@ const HomePage = () => {
                           className="ui mini rounded image"
                           alt=""
                         />
-                        <div className="content">Cooling Systems / Flushes</div>
+                        <div className="content">
+                          <Text>Cooling Systems / Flushes</Text>
+                        </div>
                       </h4>
                     </td>
-                    <td className="positive">$140.00 Flat Rate</td>
+                    <td className="positive">
+                      <Text>$140.00 Flat Rate</Text>
+                    </td>
                   </tr>
                   <tr>
                     <td>
@@ -229,10 +254,14 @@ const HomePage = () => {
                           className="ui mini rounded image"
                           alt=""
                         />
-                        <div className="content">Transmission Service</div>
+                        <div className="content">
+                          <Text>Transmission Service</Text>
+                        </div>
                       </h4>
                     </td>
-                    <td className="positive">Starting at $120.00</td>
+                    <td className="positive">
+                      <Text>Starting at $120.00</Text>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -423,46 +452,74 @@ const HomePage = () => {
                       <table className="ui celled table unstackable">
                         <thead>
                           <tr>
-                            <th style={{ fontSize: "1.5rem" }}>Days</th>
-                            <th style={{ fontSize: "1.5rem" }}>Hours</th>
+                            <th style={{ fontSize: "1.5rem" }}>
+                              <Text bold>Days</Text>
+                            </th>
+                            <th style={{ fontSize: "1.5rem" }}>
+                              <Text bold>Hours</Text>
+                            </th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
-                            <td data-label="Days">Monday</td>
-                            <td data-label="Operational Hours">8AM - 6PM</td>
-                          </tr>
-                          <tr>
-                            <td data-label="Days">Tuesday</td>
-                            <td data-label="Operational Hours">8AM - 6PM</td>
-                          </tr>
-                          <tr>
-                            <td data-label="Days">Wednesday</td>
-                            <td data-label="Operational Hours">8AM - 6PM</td>
-                          </tr>
-                          <tr>
-                            <td data-label="Days">Thursday</td>
-                            <td data-label="Operational Hours">8AM - 6PM</td>
-                          </tr>
-                          <tr>
-                            <td data-label="Days">Friday</td>
-                            <td data-label="Operational Hours">8AM - 6PM</td>
-                          </tr>
-                          <tr>
-                            <td data-label="Days">Saturday</td>
+                            <td data-label="Days">
+                              <Text bold>Monday</Text>
+                            </td>
                             <td data-label="Operational Hours">
-                              8AM - <span style={{ color: "red" }}>4PM</span>
+                              <Text bold>8AM - 6PM</Text>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td data-label="Days">
+                              <Text bold>Tuesday</Text>
+                            </td>
+                            <td data-label="Operational Hours">
+                              <Text bold>8AM - 6PM</Text>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td data-label="Days">
+                              <Text bold>Wednesday</Text>
+                            </td>
+                            <td data-label="Operational Hours">
+                              <Text bold>8AM - 6PM</Text>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td data-label="Days">
+                              <Text bold>Thursday</Text>
+                            </td>
+                            <td data-label="Operational Hours">
+                              <Text bold>8AM - 6PM</Text>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td data-label="Days">
+                              <Text bold>Friday</Text>
+                            </td>
+                            <td data-label="Operational Hours">
+                              <Text bold>8AM - 6PM</Text>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td data-label="Days">
+                              <Text bold>Saturday</Text>
+                            </td>
+                            <td data-label="Operational Hours">
+                              <Text bold>
+                                8AM - <span style={{ color: "red" }}>4PM</span>
+                              </Text>
                             </td>
                           </tr>
                           <tr>
                             <td data-label="Days" style={{ color: "red" }}>
-                              Sunday
+                              <Text bold>Sunday</Text>
                             </td>
                             <td
                               data-label="Operational Hours"
                               style={{ color: "red" }}
                             >
-                              Closed
+                              <Text bold>Closed</Text>
                             </td>
                           </tr>
                         </tbody>
