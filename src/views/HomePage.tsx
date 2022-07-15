@@ -1,5 +1,5 @@
 import aseLogo from "assets/ASE-logo.webp";
-import engineBlock from "assets/auto-engine-block.webp";
+import LogoWide from "assets/logo-transparent-wide.webp";
 import carTransmission from "assets/car_transmission.png";
 import coolingSystem from "assets/cooling-system.png";
 import oilIcon from "assets/oil.webp";
