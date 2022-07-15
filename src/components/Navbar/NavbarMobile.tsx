@@ -27,7 +27,7 @@ const NavbarMobile = () => {
             <img src={LogoWide} alt="" />
           </ScrollLink>
         </LogoContainer>
-        <MenuBtn src={HamburgerIcon} onClick={() => setIsOpen(true)} />
+        <MenuBtn src={HamburgerIcon} onClick={() => setIsOpen(true)} alt="" />
       </TopBar>
       <MenuWrapper isOpen={isOpen}>
         <div
