@@ -661,7 +661,7 @@ const ImageContainer = styled.div<{ imageHeight: number }>`
   }
 
   @media only screen and (max-width: 799px) {
-    height: ${({ imageHeight }) => `${imageHeight / 2}px`};
+    height: 340px;
   }
 `;
 
