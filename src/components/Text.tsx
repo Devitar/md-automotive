@@ -13,7 +13,9 @@ type Props = {
   /** Colors the text. Default: black */
   color?: string;
   /** Sets the font size in pixels. Default: 14 */
-  fontSize?: number;
+  fontSize?: string;
+  /** Flag stating whether this is a header. */
+  header?: boolean;
   /** Sets the font style. */
   italic?: boolean;
   /** Text decoration */
@@ -36,6 +38,7 @@ const Text = ({
   className,
   color,
   fontSize,
+  header = false,
   italic,
   textDecoration,
   link = false,
@@ -43,18 +46,33 @@ const Text = ({
   newTab = true,
 }: React.PropsWithChildren<Props>) =>
   !link ? (
-    <TextRenderer
-      align={align}
-      bold={bold}
-      color={color}
-      className={className}
-      fontSize={fontSize}
-      italic={italic}
-      textDecoration={textDecoration}
-      backgroundColor={backgroundColor}
-    >
-      {children}
-    </TextRenderer>
+    header ? (
+      <HeaderRenderer
+        align={align}
+        bold={bold}
+        color={color}
+        className={className}
+        fontSize={fontSize}
+        italic={italic}
+        textDecoration={textDecoration}
+        backgroundColor={backgroundColor}
+      >
+        {children}
+      </HeaderRenderer>
+    ) : (
+      <TextRenderer
+        align={align}
+        bold={bold}
+        color={color}
+        className={className}
+        fontSize={fontSize}
+        italic={italic}
+        textDecoration={textDecoration}
+        backgroundColor={backgroundColor}
+      >
+        {children}
+      </TextRenderer>
+    )
   ) : (
     <LinkRenderer
       href={
@@ -80,23 +98,35 @@ const Text = ({
 
 /** Styles */
 
-const TextRenderer = styled.div<Omit<Props, "children" | "link">>`
+const TextRenderer = styled.p<Omit<Props, "children" | "link" | "header">>`
   background-color: ${({ backgroundColor }) =>
     backgroundColor ?? "transparent"};
   color: ${({ color }) => color};
   display: inline;
-  font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : "1.2rem")};
+  font-size: ${({ fontSize }) => (fontSize ? `${fontSize}` : "1.2rem")};
   font-style: ${({ italic }) => (italic ? "italic" : undefined)};
   font-weight: ${({ bold }) => (bold ? "bold" : 400)};
   text-align: ${({ align }) => align};
   text-decoration: ${({ textDecoration }) => textDecoration};
 `;
-const LinkRenderer = styled.a<Omit<Props, "children" | "link">>`
+const LinkRenderer = styled.a<Omit<Props, "children" | "link" | "header">>`
   background-color: ${({ backgroundColor }) =>
     backgroundColor ?? "transparent"};
   color: ${({ color }) => color};
   display: flex;
-  font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : "1rem")};
+  font-size: ${({ fontSize }) => (fontSize ? `${fontSize}` : "1rem")};
+  font-style: ${({ italic }) => (italic ? "italic" : undefined)};
+  font-weight: ${({ bold }) => (bold ? "bold" : 400)};
+  text-align: ${({ align }) => align};
+  text-decoration: ${({ textDecoration }) => textDecoration};
+`;
+
+const HeaderRenderer = styled.h2<Omit<Props, "children" | "link" | "header">>`
+  background-color: ${({ backgroundColor }) =>
+    backgroundColor ?? "transparent"};
+  color: ${({ color }) => color};
+  display: inline;
+  font-size: ${({ fontSize }) => (fontSize ? `${fontSize}` : "1.2rem")};
   font-style: ${({ italic }) => (italic ? "italic" : undefined)};
   font-weight: ${({ bold }) => (bold ? "bold" : 400)};
   text-align: ${({ align }) => align};
