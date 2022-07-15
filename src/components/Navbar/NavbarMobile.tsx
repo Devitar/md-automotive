@@ -16,7 +16,14 @@ const NavbarMobile = () => {
     <Wrapper>
       <TopBar className="menu">
         <LogoContainer>
-          <ScrollLink to="Hero" spy smooth duration={500} offset={-70}>
+          <ScrollLink
+            to="Hero"
+            spy
+            smooth
+            duration={500}
+            offset={-70}
+            href="#top"
+          >
             <img src={LogoWide} alt="" />
           </ScrollLink>
         </LogoContainer>
@@ -39,6 +46,7 @@ const NavbarMobile = () => {
               duration={500}
               offset={-50}
               onClick={() => setIsOpen(false)}
+              href="#Services"
             >
               Services
             </ScrollLink>
@@ -52,6 +60,7 @@ const NavbarMobile = () => {
               duration={500}
               offset={-50}
               onClick={() => setIsOpen(false)}
+              href="#AboutUs"
             >
               About
             </ScrollLink>
@@ -65,6 +74,7 @@ const NavbarMobile = () => {
               duration={500}
               offset={-50}
               onClick={() => setIsOpen(false)}
+              href="#ContactUs"
             >
               Contact
             </ScrollLink>

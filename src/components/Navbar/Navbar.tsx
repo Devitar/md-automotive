@@ -11,26 +11,54 @@ const Navbar = () => {
       <Menu fixed="top">
         <Menu.Item header>
           <LogoContainer>
-            <ScrollLink to="Hero" spy smooth duration={500} offset={-70}>
+            <ScrollLink
+              to="Hero"
+              spy
+              smooth
+              duration={500}
+              offset={-70}
+              href="#top"
+            >
               <img src={LogoWide} alt="" />
             </ScrollLink>
           </LogoContainer>
         </Menu.Item>
 
         <Menu.Item position="right" name="services">
-          <ScrollLink to="Services" spy smooth duration={500} offset={-65}>
+          <ScrollLink
+            to="Services"
+            spy
+            smooth
+            duration={500}
+            offset={-65}
+            href="#Services"
+          >
             Services
           </ScrollLink>
         </Menu.Item>
 
         <Menu.Item name="aboutus">
-          <ScrollLink to="AboutUs" spy smooth duration={500} offset={-65}>
+          <ScrollLink
+            to="AboutUs"
+            spy
+            smooth
+            duration={500}
+            offset={-65}
+            href="#AboutUs"
+          >
             About
           </ScrollLink>
         </Menu.Item>
 
         <Menu.Item name="contact">
-          <ScrollLink to="ContactUs" spy smooth duration={500} offset={-65}>
+          <ScrollLink
+            to="ContactUs"
+            spy
+            smooth
+            duration={500}
+            offset={-65}
+            href="#ContactUs"
+          >
             Contact
           </ScrollLink>
         </Menu.Item>
