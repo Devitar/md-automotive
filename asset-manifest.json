@@ -1,20 +1,28 @@
 {
   "files": {
     "main.css": "/static/css/main.eb10a684.css",
-    "main.js": "/static/js/main.08d2f22d.js",
-    "static/media/front-view.png": "/static/media/front-view.09d6735d7b05f23587ef.png",
-    "static/media/waiting-room.png": "/static/media/waiting-room.f043c03b1923abbc0ee6.png",
-    "static/media/waiting-room2.png": "/static/media/waiting-room2.4803d040ec73dfbecd1b.png",
-    "static/media/carbon-fiber-woven-texture.jpg": "/static/media/carbon-fiber-woven-texture.e023add0d92c21979528.jpg",
-    "static/media/banner-red.png": "/static/media/banner-red.5e57851b8a4a761caf71.png",
-    "static/media/delete_white.png": "/static/media/delete_white.cfb3dbae43bf4e620239.png",
-    "static/media/menu_icon_white.png": "/static/media/menu_icon_white.0119ee6d56b4e253820f.png",
+    "main.js": "/static/js/main.00e542b9.js",
+    "static/media/md-automotive-front.webp": "/static/media/md-automotive-front.b04bc1fe0c8834f5a6bb.webp",
+    "static/media/corner.webp": "/static/media/corner.7272f1624407167ff8e6.webp",
+    "static/media/wrenches_hero.webp": "/static/media/wrenches_hero.e5fda20f651357b749ba.webp",
+    "static/media/plaque.webp": "/static/media/plaque.df8454c79ce024f29765.webp",
+    "static/media/logo-transparent.webp": "/static/media/logo-transparent.e2c8f9cf19939f9a9857.webp",
+    "static/media/logo-transparent-wide.webp": "/static/media/logo-transparent-wide.9866306d4caae7779d8b.webp",
+    "static/media/carbon-fiber-woven-texture.webp": "/static/media/carbon-fiber-woven-texture.6418a09e5ad841c4c652.webp",
+    "static/media/ASE-logo.webp": "/static/media/ASE-logo.45e56563744edc842c7c.webp",
+    "static/media/timing-belt.png": "/static/media/timing-belt.267f2e8f4015f6bd3979.png",
+    "static/media/cooling-system.png": "/static/media/cooling-system.a13fcd4cb3e0b04e1e09.png",
+    "static/media/car_transmission.png": "/static/media/car_transmission.36bf8ab7ceb80222c239.png",
+    "static/media/oil.webp": "/static/media/oil.e63c83a697cfaf1ad964.webp",
+    "static/media/menu_icon_white.webp": "/static/media/menu_icon_white.dd9bc7eaa036af277e48.webp",
+    "static/media/delete_white.webp": "/static/media/delete_white.c922f99144d0f210e243.webp",
+    "static/media/banner-red.webp": "/static/media/banner-red.b0eda89fead623dd2daa.webp",
     "index.html": "/index.html",
     "main.eb10a684.css.map": "/static/css/main.eb10a684.css.map",
-    "main.08d2f22d.js.map": "/static/js/main.08d2f22d.js.map"
+    "main.00e542b9.js.map": "/static/js/main.00e542b9.js.map"
   },
   "entrypoints": [
     "static/css/main.eb10a684.css",
-    "static/js/main.08d2f22d.js"
+    "static/js/main.00e542b9.js"
   ]
 }
