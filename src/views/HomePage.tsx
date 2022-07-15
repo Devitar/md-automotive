@@ -108,7 +108,7 @@ const HomePage = () => {
               <div ref={ServicesRef}>
                 <Card color="red" fluid>
                   <Card.Content>
-                    <Text bold fontSize={"1.5rem"} header>
+                    <Text bold fontSize={"1.5rem"} header primaryHeader>
                       MD Automotive Repair specializes in all makes and models
                       services!
                     </Text>
@@ -289,7 +289,7 @@ const HomePage = () => {
               >
                 <Card color="red" fluid>
                   <Card.Content>
-                    <Text bold fontSize={"1.5rem"}>
+                    <Text bold fontSize={"1.5rem"} header>
                       We Listen To Your Needs!
                     </Text>
                     <Divider />
@@ -335,7 +335,7 @@ const HomePage = () => {
               <div ref={AboutUsRef}>
                 <Card color="red" fluid>
                   <Card.Content>
-                    <Text bold fontSize={"1.5rem"}>
+                    <Text bold fontSize={"1.5rem"} header>
                       We are your expert specialty shop without inflated prices!
                     </Text>
                     <Divider />
