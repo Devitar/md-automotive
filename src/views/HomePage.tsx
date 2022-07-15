@@ -328,6 +328,9 @@ const HomePage = () => {
                       you'll know you're receiving unmatched service compared to
                       others in the area!
                     </Text>
+                    <CTAButton href="tel:+1 (385) 336 - 3652">
+                      Schedule an Appointment
+                    </CTAButton>
                   </Card.Content>
                 </Card>
               </div>
