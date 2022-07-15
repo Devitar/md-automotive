@@ -34,7 +34,7 @@ const NavbarMobile = () => {
           style={{ display: "flex", alignItems: "center" }}
           onClick={() => setIsOpen(false)}
         >
-          <CloseBtn src={CloseIcon} />
+          <CloseBtn src={CloseIcon} alt="" />
           <Text color="white">Close</Text>
         </div>
         <Menu stackable>
