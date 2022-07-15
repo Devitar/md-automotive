@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import styled from "styled-components";
 
 /** Types */
@@ -18,6 +19,8 @@ type Props = {
   header?: boolean;
   /** Sets the font style. */
   italic?: boolean;
+  /** Primary header tag. */
+  primaryHeader?: boolean;
   /** Text decoration */
   textDecoration?: string;
   /** Flags the text as a link (of a certain type if chosen, will use a generic if not),
@@ -40,25 +43,58 @@ const Text = ({
   fontSize,
   header = false,
   italic,
+  primaryHeader = false,
   textDecoration,
   link = false,
   mask,
   newTab = true,
-}: React.PropsWithChildren<Props>) =>
-  !link ? (
+}: React.PropsWithChildren<Props>) => {
+  const RenderHeader = useCallback(
+    () =>
+      primaryHeader ? (
+        <PrimaryHeaderRenderer
+          align={align}
+          bold={bold}
+          color={color}
+          className={className}
+          fontSize={fontSize}
+          italic={italic}
+          textDecoration={textDecoration}
+          backgroundColor={backgroundColor}
+        >
+          {children}
+        </PrimaryHeaderRenderer>
+      ) : (
+        <HeaderRenderer
+          align={align}
+          bold={bold}
+          color={color}
+          className={className}
+          fontSize={fontSize}
+          italic={italic}
+          textDecoration={textDecoration}
+          backgroundColor={backgroundColor}
+        >
+          {children}
+        </HeaderRenderer>
+      ),
+    [
+      align,
+      backgroundColor,
+      bold,
+      children,
+      className,
+      color,
+      fontSize,
+      italic,
+      primaryHeader,
+      textDecoration,
+    ]
+  );
+
+  return !link ? (
     header ? (
-      <HeaderRenderer
-        align={align}
-        bold={bold}
-        color={color}
-        className={className}
-        fontSize={fontSize}
-        italic={italic}
-        textDecoration={textDecoration}
-        backgroundColor={backgroundColor}
-      >
-        {children}
-      </HeaderRenderer>
+      RenderHeader()
     ) : (
       <TextRenderer
         align={align}
@@ -95,6 +131,7 @@ const Text = ({
       {mask ? mask : children}
     </LinkRenderer>
   );
+};
 
 /** Styles */
 
@@ -121,6 +158,19 @@ const LinkRenderer = styled.a<Omit<Props, "children" | "link" | "header">>`
   text-decoration: ${({ textDecoration }) => textDecoration};
 `;
 
+const PrimaryHeaderRenderer = styled.h1<
+  Omit<Props, "children" | "link" | "header">
+>`
+  background-color: ${({ backgroundColor }) =>
+    backgroundColor ?? "transparent"};
+  color: ${({ color }) => color};
+  display: inline;
+  font-size: ${({ fontSize }) => (fontSize ? `${fontSize}` : "1.2rem")};
+  font-style: ${({ italic }) => (italic ? "italic" : undefined)};
+  font-weight: ${({ bold }) => (bold ? "bold" : 400)};
+  text-align: ${({ align }) => align};
+  text-decoration: ${({ textDecoration }) => textDecoration};
+`;
 const HeaderRenderer = styled.h2<Omit<Props, "children" | "link" | "header">>`
   background-color: ${({ backgroundColor }) =>
     backgroundColor ?? "transparent"};
