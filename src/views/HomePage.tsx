@@ -1,12 +1,12 @@
 import aseLogo from "assets/ASE-logo.webp";
-import carTransmission from "assets/car_transmission.png";
-import coolingSystem from "assets/cooling-system.png";
+import carTransmission from "assets/car_transmission.webp";
+import coolingSystem from "assets/cooling-system.webp";
 import aboutUsImg from "assets/corner.webp";
 import Logo from "assets/logo-transparent.webp";
 import autoShopFront from "assets/md-automotive-front.webp";
 import oilIcon from "assets/oil.webp";
 import wallPlaque from "assets/plaque.webp";
-import timingBelt from "assets/timing-belt.png";
+import timingBelt from "assets/timing-belt.webp";
 import WrenchesHero from "assets/wrenches_hero.webp";
 import { Divider, Header, Page, Section, Text } from "components";
 import { useEffect, useRef, useState } from "react";
