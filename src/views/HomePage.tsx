@@ -517,7 +517,7 @@ const HomePage = () => {
                             </td>
                             <td data-label="Operational Hours">
                               <Text bold>
-                                8AM - <span style={{ color: "red" }}>4PM</span>
+                                9AM - <span style={{ color: "red" }}>4PM</span>
                               </Text>
                             </td>
                           </tr>
